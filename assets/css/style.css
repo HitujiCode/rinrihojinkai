@@ -548,12 +548,16 @@ select::-ms-expand {
 }
 
 .p-card__title {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
 	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
 	line-height: 1.5625;
 	margin-top: 0.5rem;
+	overflow: hidden;
 	word-break: break-word;
 }
 

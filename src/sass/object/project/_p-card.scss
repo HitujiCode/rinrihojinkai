@@ -61,6 +61,10 @@
   letter-spacing: 0.05em;
   flex-grow: 1;
   word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   @include mq("md") {
     line-height: calc(26 / 16);
   }
