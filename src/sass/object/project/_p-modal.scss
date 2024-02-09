@@ -1,0 +1,169 @@
+@use "global" as *;
+
+.p-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($darkgray, 0.7);
+  display: grid;
+  place-content: center;
+  z-index: 1000;
+  padding: 0 rem(45);
+  transition:
+    opacity 0.3s linear,
+    transform 0.3s linear;
+  opacity: 0;
+  visibility: hidden;
+  @include mq("md") {
+    padding: 0 rem(25);
+  }
+}
+
+.p-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-modal__inner {
+  margin: auto;
+  width: fit-content;
+  max-width: rem(600);
+  display: grid;
+  place-content: center;
+  position: relative;
+  height: inherit;
+  @include mq("md") {
+    max-width: rem(960);
+    padding: 0 rem(84);
+  }
+}
+
+.p-modal__wrap {
+  padding: rem(72) 0;
+  padding: calc(72 / 1400 * 100vw) 0;
+  position: absolute;
+  width: fit-content;
+  max-height: 100vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%) scale(0.7);
+  transition:
+    opacity 0.3s linear,
+    transform 0.3s linear;
+}
+
+.p-modal__wrap.show {
+  transform: translateY(-50%) scale(1);
+}
+
+.p-modal__img {
+  width: fit-content;
+  height: 100%;
+  max-height: calc(100vh - rem(80));
+  transition: opacity 0.7s ease-out;
+  user-select: none;
+  @include mq("md") {
+    max-height: 80vh;
+  }
+}
+
+.p-modal__img img {
+  width: 100%;
+  height: 100%;
+  max-height: inherit;
+  object-fit: contain;
+}
+
+.p-modal__close-button {
+  position: absolute;
+  top: rem(-50);
+  top: 0;
+  right: rem(-4);
+  margin: 0;
+  padding: 0;
+  width: rem(33);
+  height: rem(33);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mq("md") {
+    top: rem(-72);
+    top: min(-4.5vw, rem(-72));
+    top: 0;
+    width: rem(40);
+    height: rem(40);
+    width: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
+    height: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
+  }
+}
+
+.p-modal__close-button::before,
+.p-modal__close-button::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: rem(3);
+  background-color: $white;
+}
+
+.p-modal__close-button::before {
+  transform: rotate(45deg);
+}
+
+.p-modal__close-button::after {
+  transform: rotate(-45deg);
+}
+
+.p-modal__prev,
+.p-modal__next {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(25);
+  height: rem(25);
+  cursor: pointer;
+  @include mq("md") {
+    width: rem(44);
+    height: rem(44);
+  }
+}
+
+.p-modal__prev {
+  left: rem(-35);
+  @include mq("md") {
+    left: 0;
+  }
+}
+
+.p-modal__next {
+  right: rem(-35);
+  @include mq("md") {
+    right: 0;
+  }
+}
+
+.p-modal__prev.is-disabled,
+.p-modal__next.is-disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* 右からフェードイン */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}

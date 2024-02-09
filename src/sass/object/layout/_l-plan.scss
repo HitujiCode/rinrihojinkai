@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.l-plan {
+  margin-top: rem(50);
+  overflow-x: hidden;
+  @include mq("md") {
+    margin-top: rem(100);
+  }
+}

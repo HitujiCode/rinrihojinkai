@@ -1,0 +1,109 @@
+@use "global" as *;
+
+.p-sub-flow {
+  opacity: 0;
+  visibility: hidden;
+  @include mq("md") {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.p-sub-flow:nth-child(3) {
+  background-color: $beige;
+  padding: rem(50) 0;
+  @include mq("md") {
+    padding: rem(100) 0;
+  }
+}
+
+.p-sub-flow__head {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.p-sub-flow__swiper-wrap {
+  margin-top: rem(30);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+
+  .swiper {
+    padding-bottom: rem(30);
+  }
+
+  .swiper-wrapper {
+  }
+
+  .swiper-slide {
+    width: rem(285);
+    height: auto;
+    @include mq("md") {
+      width: 100%;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: initial;
+    top: 42%;
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: rem(-20);
+  }
+
+  .swiper-button-next {
+    right: rem(-20);
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $darkgray;
+    opacity: 1;
+    width: rem(10);
+    height: rem(10);
+  }
+
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 rem(6);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $base;
+    width: rem(14);
+    height: rem(14);
+  }
+}
+
+.p-sub-flow__info {
+  margin-top: rem(30);
+  @include mq("md") {
+    margin-top: initial;
+  }
+}
+
+.p-sub-flow__button {
+  margin-top: rem(50);
+  text-align: center;
+}
+
+// 表示崩れ対策のための初期表示
+// .js-flow-swiper1,
+// .js-flow-swiper2,
+// .js-flow-swiper3 {
+//   visibility: hidden;
+// }

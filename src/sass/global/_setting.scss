@@ -1,0 +1,62 @@
+@use "sass:math";
+
+////////////////////
+// インナー幅設定
+////////////////////
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 960px;
+// ※キャンパス幅ではなくインナーの幅を指す
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 30px;
+// ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
+
+////////////////////
+// フォント設定
+////////////////////
+
+@font-face {
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Lora";
+  src: url("../fonts/Lora-Regular.woff") format("woff");
+}
+
+$base-font: "Noto Serif JP", serif;
+$en-font: "Lora", serif;
+// ※検証ツールでしっかり反映されているか確認する
+
+// フォントウェイト
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+$black: #333;
+$white: #fff;
+$darkgray: #5d5d5d;
+$base: #79c9bc;
+$blue: #391e88;
+$bg-black: #120e19;
+$beige: #f5f4f1;
+$contact: #ebe9e3;
+
+body {
+  font-family: $base-font;
+  color: $darkgray;
+  position: relative;
+}
+
+.l-body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
+}

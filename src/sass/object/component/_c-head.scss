@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.c-head {
+  text-align: center;
+}
+
+.c-head__main {
+  font-size: rem(20);
+  font-weight: $medium;
+  line-height: calc(60 / 40);
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: rem(28);
+    font-weight: $semi-bold;
+    line-height: calc(38 / 28);
+    letter-spacing: 0.1em;
+  }
+}
+
+.c-head__sub {
+  font-size: rem(14);
+  font-weight: $semi-bold;
+  line-height: calc(50 / 28);
+  letter-spacing: 0.05em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: calc(40 / 16);
+  }
+}

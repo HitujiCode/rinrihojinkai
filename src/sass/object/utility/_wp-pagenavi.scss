@@ -1,0 +1,76 @@
+@use "global" as *;
+
+.wp-pagenavi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(20);
+}
+
+.wp-pagenavi .pages {
+}
+
+.wp-pagenavi .previouspostslink {
+  display: inline-block;
+  width: rem(25);
+  height: rem(25);
+  font-size: 0;
+  position: relative;
+}
+
+.wp-pagenavi .previouspostslink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/common/arrow-prev.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.wp-pagenavi .page {
+  font-size: rem(16);
+  font-weight: $medium;
+  line-height: 1;
+  width: rem(25);
+  height: rem(25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 現在のページ番号
+.wp-pagenavi .current {
+  background-color: $base;
+  border-radius: 50%;
+  color: $white;
+  width: rem(25);
+  height: rem(25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-pagenavi .nextpostslink {
+  display: inline-block;
+  width: rem(25);
+  height: rem(25);
+  font-size: 0;
+  position: relative;
+}
+
+.wp-pagenavi .nextpostslink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/common/arrow-next.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}

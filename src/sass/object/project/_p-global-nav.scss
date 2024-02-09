@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.p-global-nav {
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.p-global-nav__items {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    height: inherit;
+  }
+}
+
+.p-global-nav__item {
+  @include mq("md") {
+    height: 100%;
+  }
+}
+
+.p-global-nav__item a {
+  padding: rem(15) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: rem(20);
+  font-family: $en-font;
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: $white;
+  text-transform: uppercase;
+  @include mq("md") {
+    padding: 0 rem(20);
+    height: inherit;
+    font-size: rem(14);
+  }
+}
+
+.p-global-nav__item span {
+  position: relative;
+}
+
+.p-global-nav__item span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  transform: scale(0);
+  height: 1px;
+  background-color: $white;
+  transition: 0.3s;
+}
+
+@media (hover: hover) {
+  .p-global-nav__item span:hover::after {
+    transform: scale(1);
+  }
+}
+
+.p-global-nav__icons {
+  margin-top: rem(15);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}

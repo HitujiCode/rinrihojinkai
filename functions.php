@@ -117,18 +117,16 @@ function get_attachment_id_from_url($image_url)
   return $attachment_id;
 }
 
-
-
 // // パンくずリスト文字数制限
-// add_filter('bcn_breadcrumb_title', 'truncate_bc_title', 10, 3);
-// function truncate_bc_title($title, $type, $id)
-// {
-//   $limit = 10;
-//   $truncated = mb_substr($title, 0, $limit);
+add_filter('bcn_breadcrumb_title', 'truncate_bc_title', 10, 3);
+function truncate_bc_title($title, $type, $id)
+{
+  $limit = 20;
+  $truncated = mb_substr($title, 0, $limit);
 
-//   if (mb_strlen($title) > $limit) {
-//     $truncated .= '...';
-//   }
+  if (mb_strlen($title) > $limit) {
+    $truncated .= '...';
+  }
 
-//   return $truncated;
-// }
+  return $truncated;
+}
