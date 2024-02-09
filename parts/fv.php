@@ -123,8 +123,8 @@ if ($pageConfig) {
   <?php } ?>
   <div class="p-sub-fv__bg">
     <picture>
-      <source srcset="<?php echo esc_url(get_theme_file_uri("$image_pc")); ?>" media="(min-width:768px)" width="" height="" />
-      <img src="<?php echo esc_url(get_theme_file_uri("$image_sp")); ?>" alt="" width="" height="" />
+      <source srcset="<?php echo esc_url(get_theme_file_uri("$image_pc")); ?>" media="(min-width:768px)" width="1400" height="300" />
+      <img src="<?php echo esc_url(get_theme_file_uri("$image_sp")); ?>" alt="FV画像" width="375" height="233" />
     </picture>
   </div>
   <div class="p-sub-fv__inner l-inner<?php if (is_single() && (get_post_type() == 'post' || get_post_type() == 'works')) echo ' p-sub-fv__inner--article'; ?>">
