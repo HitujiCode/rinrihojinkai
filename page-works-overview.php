@@ -40,21 +40,16 @@
                       <?php
                       // サムネイルがあるかどうかをチェック
                       if (has_post_thumbnail()) :
-                        the_post_thumbnail();
+                        // サムネイルの HTML を直接出力
+                        echo get_the_post_thumbnail(null, 'full');
                       else :
                         // CFSで指定された画像があるかどうかをチェック
                         $works_gallery = CFS()->get('works_gallery');
                         $cfs_image_url = !empty($works_gallery) ? $works_gallery[0]['works_img'] : '';
 
-                        // CFSで指定された画像がある場合、そのIDを取得しようとする
+                        // CFSで指定された画像がある場合、その画像を直接表示
                         if (!empty($cfs_image_url)) :
-                          $image_id = get_attachment_id_from_url($cfs_image_url);
-                          if (!empty($image_id)) :
-                            echo wp_get_attachment_image($image_id, 'full');
-                          else :
-                            // CFSの画像URLからIDが取得できなかった場合、直接URLを使用して表示
-                            echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . get_the_title_attribute() . '">';
-                          endif;
+                          echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . esc_attr(get_the_title()) . '">';
                         else :
                           // サムネイルもCFSの画像もない場合、'No Image' 画像を表示
                           echo '<img src="' . esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')) . '" alt="No Image">';
@@ -117,21 +112,16 @@
                       <?php
                       // サムネイルがあるかどうかをチェック
                       if (has_post_thumbnail()) :
-                        the_post_thumbnail();
+                        // サムネイルの HTML を直接出力
+                        echo get_the_post_thumbnail(null, 'full');
                       else :
                         // CFSで指定された画像があるかどうかをチェック
                         $works_gallery = CFS()->get('works_gallery');
                         $cfs_image_url = !empty($works_gallery) ? $works_gallery[0]['works_img'] : '';
 
-                        // CFSで指定された画像がある場合、そのIDを取得しようとする
+                        // CFSで指定された画像がある場合、その画像を直接表示
                         if (!empty($cfs_image_url)) :
-                          $image_id = get_attachment_id_from_url($cfs_image_url);
-                          if (!empty($image_id)) :
-                            echo wp_get_attachment_image($image_id, 'full');
-                          else :
-                            // CFSの画像URLからIDが取得できなかった場合、直接URLを使用して表示
-                            echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . get_the_title_attribute() . '">';
-                          endif;
+                          echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . esc_attr(get_the_title()) . '">';
                         else :
                           // サムネイルもCFSの画像もない場合、'No Image' 画像を表示
                           echo '<img src="' . esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')) . '" alt="No Image">';
@@ -195,21 +185,16 @@
                       <?php
                       // サムネイルがあるかどうかをチェック
                       if (has_post_thumbnail()) :
-                        the_post_thumbnail();
+                        // サムネイルの HTML を直接出力
+                        echo get_the_post_thumbnail(null, 'full');
                       else :
                         // CFSで指定された画像があるかどうかをチェック
                         $works_gallery = CFS()->get('works_gallery');
                         $cfs_image_url = !empty($works_gallery) ? $works_gallery[0]['works_img'] : '';
 
-                        // CFSで指定された画像がある場合、そのIDを取得しようとする
+                        // CFSで指定された画像がある場合、その画像を直接表示
                         if (!empty($cfs_image_url)) :
-                          $image_id = get_attachment_id_from_url($cfs_image_url);
-                          if (!empty($image_id)) :
-                            echo wp_get_attachment_image($image_id, 'full');
-                          else :
-                            // CFSの画像URLからIDが取得できなかった場合、直接URLを使用して表示
-                            echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . get_the_title_attribute() . '">';
-                          endif;
+                          echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . esc_attr(get_the_title()) . '">';
                         else :
                           // サムネイルもCFSの画像もない場合、'No Image' 画像を表示
                           echo '<img src="' . esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')) . '" alt="No Image">';
@@ -244,6 +229,7 @@
     <div class="p-archive-works__button-top l-common">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="c-button">top</a>
     </div>
+
     </div>
   </div>
   <?php get_template_part("parts/contact") ?>
