@@ -68,39 +68,43 @@ jQuery(function ($) {
   });
 
   // アンカーリンク
-  $(document).ready(function () {
-    // 別ページからの遷移を考慮して、ページ読み込み時とハッシュ変更時に処理を実行
-    function adjustAnchor() {
-      var headerHeight = $(".js-header").outerHeight(); // ヘッダーの動的な高さを取得
-      var hash = window.location.hash; // 現在のハッシュを取得
+  // $(document).ready(function () {
+  //   // 別ページからの遷移を考慮して、ページ読み込み時とハッシュ変更時に処理を実行
+  //   function adjustAnchor() {
+  //     var headerHeight = $(".js-header").outerHeight(); // ヘッダーの動的な高さを取得
+  //     var hash = window.location.hash; // 現在のハッシュを取得
 
-      if (hash) {
-        var target = $(hash);
-        if (target.length) {
-          var position = target.offset().top - headerHeight; // ヘッダーの高さを考慮した位置を計算
-          $("html, body").stop().animate({
-            scrollTop: position
-          }, 600, "swing");
-        }
-      }
-    }
+  //     if (hash) {
+  //       var target = $(hash);
+  //       if (target.length) {
+  //         var position = target.offset().top - headerHeight; // ヘッダーの高さを考慮した位置を計算
+  //         $("html, body").stop().animate(
+  //           {
+  //             scrollTop: position,
+  //           },
+  //           600,
+  //           "swing"
+  //         );
+  //       }
+  //     }
+  //   }
 
-    // ページ読み込み時とハッシュが変更された時にアンカー位置調整を実行
-    $(window).on("load hashchange", function () {
-      adjustAnchor();
-    });
+  //   // ページ読み込み時とハッシュが変更された時にアンカー位置調整を実行
+  //   $(window).on("load hashchange", function () {
+  //     adjustAnchor();
+  //   });
 
-    // ページ内リンクに対するクリックイベント
-    $('a[href^="#"]').click(function (e) {
-      var href = $(this).attr("href");
-      // 別ページへのアンカーの場合はデフォルトの動作を実行
-      if (href.startsWith("#") && href.length > 1) {
-        // ハッシュ変更をトリガーとして位置調整を実行する
-        window.location.hash = href;
-        return false; // デフォルトのアンカー動作をキャンセル
-      }
-    });
-  });
+  //   // ページ内リンクに対するクリックイベント
+  //   $('a[href^="#"]').click(function (e) {
+  //     var href = $(this).attr("href");
+  //     // 別ページへのアンカーの場合はデフォルトの動作を実行
+  //     if (href.startsWith("#") && href.length > 1) {
+  //       // ハッシュ変更をトリガーとして位置調整を実行する
+  //       window.location.hash = href;
+  //       return false; // デフォルトのアンカー動作をキャンセル
+  //     }
+  //   });
+  // });
 
   // Fvスライダー
   var fvSwiperContainer = document.querySelector(".js-fv-swiper");
@@ -160,7 +164,7 @@ jQuery(function ($) {
     }
   }
 
-  // 表示崩れ対策の共通関数
+  // 表示崩れ対策の共通関数;
   function applyCommonSwiperStyles() {
     var flows = document.querySelectorAll(".p-sub-flow");
     flows.forEach(function (flow) {

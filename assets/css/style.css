@@ -368,7 +368,7 @@ select::-ms-expand {
 }
 
 .l-sub-photo__menu {
-	margin-top: 4.6875rem;
+	margin-top: 3.125rem;
 }
 
 .p-404__text {
@@ -408,6 +408,11 @@ select::-ms-expand {
 
 .p-about__swiper-wrap .swiper-button-next {
 	right: -1.375rem;
+}
+
+.p-about__swiper-wrap .swiper-button-prev::after,
+.p-about__swiper-wrap .swiper-button-next::after {
+	content: none;
 }
 
 .p-about__swiper-wrap .swiper-pagination {
@@ -504,6 +509,7 @@ select::-ms-expand {
 	display: inherit;
 	grid-row: inherit;
 	grid-template-rows: inherit;
+	row-gap: inherit;
 }
 
 .p-card__img {
@@ -686,7 +692,6 @@ select::-ms-expand {
 	word-wrap: anywhere;
 	font-size: 1.25rem;
 	font-weight: 600;
-	letter-spacing: 0.05em;
 	line-height: 1.5;
 	word-break: keep-all;
 }
@@ -717,8 +722,13 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.p-feature__text {
+.p-feature__text,
+.p-feature--delta {
 	margin-top: 1rem;
+}
+
+.p-feature--delta .p-feature__head-main {
+	letter-spacing: 0.05em;
 }
 
 .p-flow-list {
@@ -1352,7 +1362,7 @@ select::-ms-expand {
 	align-content: center;
 	background: rgba(93, 93, 93, 0.7);
 	display: grid;
-	height: 100vh;
+	height: 100dvh;
 	justify-content: center;
 	left: 0;
 	opacity: 0;
@@ -1385,9 +1395,8 @@ select::-ms-expand {
 }
 
 .p-modal__wrap {
-	max-height: 100vh;
-	padding: 4.5rem 0;
-	padding: 5.1428571429vw 0;
+	max-height: 100dvh;
+	padding: 12.8vw 0;
 	position: absolute;
 	position: relative;
 	top: 50%;
@@ -1479,7 +1488,7 @@ select::-ms-expand {
 	opacity: 0.5;
 }
 
-/* 右からフェードイン */
+/* フェードイン */
 
 .fadeIn {
 	animation: fadeIn 0.5s forwards;
@@ -1721,6 +1730,11 @@ select::-ms-expand {
 
 .p-sub-flow__swiper-wrap .swiper-button-next {
 	right: -1.25rem;
+}
+
+.p-sub-flow__swiper-wrap .swiper-button-prev::after,
+.p-sub-flow__swiper-wrap .swiper-button-next::after {
+	content: none;
 }
 
 .p-sub-flow__swiper-wrap .swiper-pagination {
@@ -1986,6 +2000,10 @@ select::-ms-expand {
 	-webkit-text-decoration: underline;
 	position: relative;
 	text-decoration: underline;
+}
+
+.u-notel {
+	pointer-events: none;
 }
 
 .wp-pagenavi {
@@ -2423,9 +2441,14 @@ a[href^="tel:"] {
 	aspect-ratio: 760/396;
 }
 
-.p-feature__text {
+.p-feature__text,
+.p-feature--delta {
 	margin-top: 1.25rem;
 	text-align: center;
+}
+
+.p-feature--delta .p-feature__head-main {
+	letter-spacing: 0.1em;
 }
 
 .p-flow-list {
@@ -2749,17 +2772,17 @@ a[href^="tel:"] {
 	padding: 0 5.25rem;
 }
 
+.p-modal__wrap {
+	padding: 5.1428571429vw 0;
+}
+
 .p-modal__img {
 	max-height: 80vh;
 }
 
 .p-modal__close-button {
-	height: 2.5rem;
 	height: min(2.8571428571vw, 6.6666666667vh);
-	top: -4.5rem;
-	top: min(-4.5vw, -4.5rem);
 	top: 0;
-	width: 2.5rem;
 	width: min(2.8571428571vw, 6.6666666667vh);
 }
 

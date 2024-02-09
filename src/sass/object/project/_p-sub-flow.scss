@@ -61,6 +61,11 @@
     right: rem(-20);
   }
 
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    content: none;
+  }
+
   .swiper-pagination {
     bottom: 0;
     display: flex;

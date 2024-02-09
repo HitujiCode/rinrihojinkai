@@ -51,56 +51,64 @@ jQuery(function ($) {
     if (bodyHeight - scrollPosition <= windowHeight + footerHeight) {
       pageTop.css({
         position: "absolute",
-        bottom: footerHeight + 6 + "px"
+        bottom: footerHeight + 6 + "px",
       });
     } else {
       pageTop.css({
         position: "fixed",
-        bottom: "20px"
+        bottom: "20px",
       });
     }
   });
   pageTop.click(function () {
-    $("body,html").animate({
-      scrollTop: 0
-    }, 300, "swing");
+    $("body,html").animate(
+      {
+        scrollTop: 0,
+      },
+      300,
+      "swing"
+    );
     return false;
   });
 
   // アンカーリンク
-  $(document).ready(function () {
-    // 別ページからの遷移を考慮して、ページ読み込み時とハッシュ変更時に処理を実行
-    function adjustAnchor() {
-      var headerHeight = $(".js-header").outerHeight(); // ヘッダーの動的な高さを取得
-      var hash = window.location.hash; // 現在のハッシュを取得
+  // $(document).ready(function () {
+  //   // 別ページからの遷移を考慮して、ページ読み込み時とハッシュ変更時に処理を実行
+  //   function adjustAnchor() {
+  //     var headerHeight = $(".js-header").outerHeight(); // ヘッダーの動的な高さを取得
+  //     var hash = window.location.hash; // 現在のハッシュを取得
 
-      if (hash) {
-        var target = $(hash);
-        if (target.length) {
-          var position = target.offset().top - headerHeight; // ヘッダーの高さを考慮した位置を計算
-          $("html, body").stop().animate({
-            scrollTop: position
-          }, 600, "swing");
-        }
-      }
-    }
+  //     if (hash) {
+  //       var target = $(hash);
+  //       if (target.length) {
+  //         var position = target.offset().top - headerHeight; // ヘッダーの高さを考慮した位置を計算
+  //         $("html, body").stop().animate(
+  //           {
+  //             scrollTop: position,
+  //           },
+  //           600,
+  //           "swing"
+  //         );
+  //       }
+  //     }
+  //   }
 
-    // ページ読み込み時とハッシュが変更された時にアンカー位置調整を実行
-    $(window).on("load hashchange", function () {
-      adjustAnchor();
-    });
+  //   // ページ読み込み時とハッシュが変更された時にアンカー位置調整を実行
+  //   $(window).on("load hashchange", function () {
+  //     adjustAnchor();
+  //   });
 
-    // ページ内リンクに対するクリックイベント
-    $('a[href^="#"]').click(function (e) {
-      var href = $(this).attr("href");
-      // 別ページへのアンカーの場合はデフォルトの動作を実行
-      if (href.startsWith("#") && href.length > 1) {
-        // ハッシュ変更をトリガーとして位置調整を実行する
-        window.location.hash = href;
-        return false; // デフォルトのアンカー動作をキャンセル
-      }
-    });
-  });
+  //   // ページ内リンクに対するクリックイベント
+  //   $('a[href^="#"]').click(function (e) {
+  //     var href = $(this).attr("href");
+  //     // 別ページへのアンカーの場合はデフォルトの動作を実行
+  //     if (href.startsWith("#") && href.length > 1) {
+  //       // ハッシュ変更をトリガーとして位置調整を実行する
+  //       window.location.hash = href;
+  //       return false; // デフォルトのアンカー動作をキャンセル
+  //     }
+  //   });
+  // });
 
   // Fvスライダー
   var fvSwiperContainer = document.querySelector(".js-fv-swiper");
@@ -110,11 +118,11 @@ jQuery(function ($) {
       effect: "fade",
       speed: 3000,
       fadeEffect: {
-        crossFade: true
+        crossFade: true,
       },
       autoplay: {
-        delay: 2000
-      }
+        delay: 2000,
+      },
     });
   }
 
@@ -123,7 +131,11 @@ jQuery(function ($) {
     var aboutSwiper = document.querySelector(".js-about-swiper");
 
     // コンテナとナビゲーションボタンが存在するかを確認
-    if (aboutSwiper && document.querySelector(".js-about-swiper-next") && document.querySelector(".js-about-swiper-prev")) {
+    if (
+      aboutSwiper &&
+      document.querySelector(".js-about-swiper-next") &&
+      document.querySelector(".js-about-swiper-prev")
+    ) {
       var createSwiper = function createSwiper() {
         if (window.innerWidth >= 768) {
           if (swiperInstance) {
@@ -141,16 +153,16 @@ jQuery(function ($) {
             centeredSlides: true,
             speed: 1000,
             autoplay: {
-              disableOnInteraction: false
+              disableOnInteraction: false,
             },
             pagination: {
               el: aboutSwiper.querySelector(".swiper-pagination"),
-              clickable: true
+              clickable: true,
             },
             navigation: {
               nextEl: document.querySelector(".js-about-swiper-next"),
-              prevEl: document.querySelector(".js-about-swiper-prev")
-            }
+              prevEl: document.querySelector(".js-about-swiper-prev"),
+            },
           });
         }
       };
@@ -160,7 +172,7 @@ jQuery(function ($) {
     }
   }
 
-  // 表示崩れ対策の共通関数
+  // 表示崩れ対策の共通関数;
   function applyCommonSwiperStyles() {
     var flows = document.querySelectorAll(".p-sub-flow");
     flows.forEach(function (flow) {
@@ -172,7 +184,11 @@ jQuery(function ($) {
     var flowSwiper1 = document.querySelector(".js-flow-swiper1");
 
     // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper1 && document.querySelector(".js-flow-swiper-next1") && document.querySelector(".js-flow-swiper-prev1")) {
+    if (
+      flowSwiper1 &&
+      document.querySelector(".js-flow-swiper-next1") &&
+      document.querySelector(".js-flow-swiper-prev1")
+    ) {
       var createSwiper = function createSwiper() {
         if (window.innerWidth >= 768) {
           if (swiperInstance) {
@@ -190,18 +206,18 @@ jQuery(function ($) {
             centeredSlides: true,
             pagination: {
               el: flowSwiper1.querySelector(".swiper-pagination"),
-              clickable: true
+              clickable: true,
             },
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next1"),
-              prevEl: document.querySelector(".js-flow-swiper-prev1")
+              prevEl: document.querySelector(".js-flow-swiper-prev1"),
             },
             // Swiper初期化後に共通スタイル適用関数を呼び出し
             on: {
               init: function init() {
                 applyCommonSwiperStyles();
-              }
-            }
+              },
+            },
           });
         }
       };
@@ -214,7 +230,11 @@ jQuery(function ($) {
     var flowSwiper2 = document.querySelector(".js-flow-swiper2");
 
     // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper2 && document.querySelector(".js-flow-swiper-next2") && document.querySelector(".js-flow-swiper-prev2")) {
+    if (
+      flowSwiper2 &&
+      document.querySelector(".js-flow-swiper-next2") &&
+      document.querySelector(".js-flow-swiper-prev2")
+    ) {
       var createSwiper = function createSwiper() {
         if (window.innerWidth >= 768) {
           if (swiperInstance) {
@@ -232,18 +252,18 @@ jQuery(function ($) {
             centeredSlides: true,
             pagination: {
               el: flowSwiper2.querySelector(".swiper-pagination"),
-              clickable: true
+              clickable: true,
             },
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next2"),
-              prevEl: document.querySelector(".js-flow-swiper-prev2")
+              prevEl: document.querySelector(".js-flow-swiper-prev2"),
             },
             // Swiper初期化後に共通スタイル適用関数を呼び出し
             on: {
               init: function init() {
                 applyCommonSwiperStyles();
-              }
-            }
+              },
+            },
           });
         }
       };
@@ -256,7 +276,11 @@ jQuery(function ($) {
     var flowSwiper3 = document.querySelector(".js-flow-swiper3");
 
     // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper3 && document.querySelector(".js-flow-swiper-next3") && document.querySelector(".js-flow-swiper-prev3")) {
+    if (
+      flowSwiper3 &&
+      document.querySelector(".js-flow-swiper-next3") &&
+      document.querySelector(".js-flow-swiper-prev3")
+    ) {
       var createSwiper = function createSwiper() {
         if (window.innerWidth >= 768) {
           if (swiperInstance) {
@@ -275,18 +299,18 @@ jQuery(function ($) {
             centeredSlides: true,
             pagination: {
               el: flowSwiper3.querySelector(".swiper-pagination"),
-              clickable: true
+              clickable: true,
             },
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next3"),
-              prevEl: document.querySelector(".js-flow-swiper-prev3")
+              prevEl: document.querySelector(".js-flow-swiper-prev3"),
             },
             // Swiper初期化後に共通スタイル適用関数を呼び出し
             on: {
               init: function init() {
                 applyCommonSwiperStyles();
-              }
-            }
+              },
+            },
           });
         }
       };
@@ -302,9 +326,13 @@ jQuery(function ($) {
     // ページネーションとナビゲーションボタンのスタイルをクリア
     var pagination = container.querySelector(".swiper-pagination");
     if (pagination) pagination.style = "";
-    var prevButton = document.querySelector(container.getAttribute("data-prev-button"));
+    var prevButton = document.querySelector(
+      container.getAttribute("data-prev-button")
+    );
     if (prevButton) prevButton.style = "";
-    var nextButton = document.querySelector(container.getAttribute("data-next-button"));
+    var nextButton = document.querySelector(
+      container.getAttribute("data-next-button")
+    );
     if (nextButton) nextButton.style = "";
   }
   window.addEventListener("load", function () {
@@ -339,11 +367,15 @@ document.addEventListener("DOMContentLoaded", function () {
         modalImg.classList.remove("fadeIn");
 
         // アニメーションが終了したらクラスを削除
-        modalImg.addEventListener("animationend", function () {
-          modalImg.classList.remove("fadeIn");
-        }, {
-          once: true
-        });
+        modalImg.addEventListener(
+          "animationend",
+          function () {
+            modalImg.classList.remove("fadeIn");
+          },
+          {
+            once: true,
+          }
+        );
 
         // 新しい画像ソースを設定してアニメーションクラスを追加
         modalImg.src = imageSources[index];
@@ -356,7 +388,10 @@ document.addEventListener("DOMContentLoaded", function () {
         prevButton.classList.toggle("is-disabled", currentIndex <= 0);
       }
       if (nextButton) {
-        nextButton.classList.toggle("is-disabled", currentIndex >= imageSources.length - 1);
+        nextButton.classList.toggle(
+          "is-disabled",
+          currentIndex >= imageSources.length - 1
+        );
       }
     };
     var closeModal = function closeModal() {
@@ -373,7 +408,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var modalWrap = modal.querySelector(".p-modal__wrap");
     var modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
     var modalImgContainer = modal.querySelector(".p-modal__img");
-    var modalImg = modalImgContainer ? modalImgContainer.querySelector("img") : null;
+    var modalImg = modalImgContainer
+      ? modalImgContainer.querySelector("img")
+      : null;
     var modalClose = document.querySelector(".p-modal__close-button");
     var prevButton = document.querySelector(".p-modal__prev");
     var nextButton = document.querySelector(".p-modal__next");
@@ -408,7 +445,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target === modalInner || e.target === modalInner) {
+      if (
+        e.target === modal ||
+        e.target === modalInner ||
+        e.target === modalInner
+      ) {
         closeModal();
       }
     });

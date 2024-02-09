@@ -10,7 +10,6 @@
   line-height: calc(60 / 40);
   word-break: keep-all;
   overflow-wrap: anywhere;
-  letter-spacing: 0.05em;
   @include mq("md") {
     font-size: clamp(20px, calc(28 / 1400 * 100vw), 28px);
     line-height: calc(50 / 28);
@@ -59,5 +58,16 @@
   @include mq("md") {
     text-align: center;
     margin-top: rem(20);
+  }
+}
+
+.p-feature--delta {
+  @extend .p-feature__text;
+}
+
+.p-feature--delta .p-feature__head-main {
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    letter-spacing: 0.1em;
   }
 }
