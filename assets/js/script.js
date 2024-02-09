@@ -123,11 +123,16 @@ jQuery(function ($) {
   }
 
   // SPのみスライダー
+  $(document).ready(function () {
+    initializeAboutSwiper();
+    initializeFlowSwiper1();
+    initializeFlowSwiper2();
+    initializeFlowSwiper3();
+  });
   function initializeAboutSwiper() {
     var aboutSwiper = document.querySelector(".js-about-swiper");
-
-    // コンテナとナビゲーションボタンが存在するかを確認
     if (aboutSwiper && document.querySelector(".js-about-swiper-next") && document.querySelector(".js-about-swiper-prev")) {
+      var swiperInstance = null;
       var createSwiper = function createSwiper() {
         if (window.innerWidth >= 768) {
           if (swiperInstance) {
@@ -135,36 +140,160 @@ jQuery(function ($) {
             swiperInstance = null;
           }
           clearSwiperStyles(aboutSwiper);
-          return;
-        }
-        if (!swiperInstance) {
-          swiperInstance = new Swiper(aboutSwiper, {
-            loop: true,
-            spaceBetween: 45,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            speed: 1000,
-            autoplay: {
-              disableOnInteraction: false
-            },
-            pagination: {
-              el: aboutSwiper.querySelector(".swiper-pagination"),
-              clickable: true
-            },
-            navigation: {
-              nextEl: document.querySelector(".js-about-swiper-next"),
-              prevEl: document.querySelector(".js-about-swiper-prev")
-            }
-          });
+        } else {
+          if (!swiperInstance) {
+            swiperInstance = new Swiper(aboutSwiper, {
+              loop: true,
+              spaceBetween: 45,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              speed: 1000,
+              autoplay: {
+                disableOnInteraction: false
+              },
+              pagination: {
+                el: aboutSwiper.querySelector(".swiper-pagination"),
+                clickable: true
+              },
+              navigation: {
+                nextEl: document.querySelector(".js-about-swiper-next"),
+                prevEl: document.querySelector(".js-about-swiper-prev")
+              }
+            });
+          }
         }
       };
-      var swiperInstance = null;
       createSwiper();
-      window.addEventListener("resize", createSwiper);
+      $(window).on("resize", createSwiper);
     }
   }
-
-  // 表示崩れ対策の共通関数;
+  function initializeFlowSwiper1() {
+    var flowSwiper1 = document.querySelector(".js-flow-swiper1");
+    if (flowSwiper1 && document.querySelector(".js-flow-swiper-next1") && document.querySelector(".js-flow-swiper-prev1")) {
+      var swiperInstance1 = null;
+      var createSwiper1 = function createSwiper1() {
+        if (window.innerWidth >= 768) {
+          if (swiperInstance1) {
+            swiperInstance1.destroy();
+            swiperInstance1 = null;
+          }
+          clearSwiperStyles(flowSwiper1);
+        } else {
+          if (!swiperInstance1) {
+            swiperInstance1 = new Swiper(flowSwiper1, {
+              loop: true,
+              spaceBetween: 45,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              pagination: {
+                el: flowSwiper1.querySelector(".swiper-pagination"),
+                clickable: true
+              },
+              navigation: {
+                nextEl: document.querySelector(".js-flow-swiper-next1"),
+                prevEl: document.querySelector(".js-flow-swiper-prev1")
+              },
+              on: {
+                init: function init() {
+                  applyCommonSwiperStyles();
+                }
+              }
+            });
+          }
+        }
+      };
+      createSwiper1();
+      $(window).on("resize", createSwiper1);
+    }
+  }
+  function initializeFlowSwiper2() {
+    var flowSwiper2 = document.querySelector(".js-flow-swiper2");
+    if (flowSwiper2 && document.querySelector(".js-flow-swiper-next2") && document.querySelector(".js-flow-swiper-prev2")) {
+      var swiperInstance2 = null;
+      var createSwiper2 = function createSwiper2() {
+        if (window.innerWidth >= 768) {
+          if (swiperInstance2) {
+            swiperInstance2.destroy();
+            swiperInstance2 = null;
+          }
+          clearSwiperStyles(flowSwiper2);
+        } else {
+          if (!swiperInstance2) {
+            swiperInstance2 = new Swiper(flowSwiper2, {
+              loop: true,
+              spaceBetween: 45,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              pagination: {
+                el: flowSwiper2.querySelector(".swiper-pagination"),
+                clickable: true
+              },
+              navigation: {
+                nextEl: document.querySelector(".js-flow-swiper-next2"),
+                prevEl: document.querySelector(".js-flow-swiper-prev2")
+              },
+              on: {
+                init: function init() {
+                  applyCommonSwiperStyles();
+                }
+              }
+            });
+          }
+        }
+      };
+      createSwiper2();
+      $(window).on("resize", createSwiper2);
+    }
+  }
+  function initializeFlowSwiper3() {
+    var flowSwiper3 = document.querySelector(".js-flow-swiper3");
+    if (flowSwiper3 && document.querySelector(".js-flow-swiper-next3") && document.querySelector(".js-flow-swiper-prev3")) {
+      var swiperInstance3 = null;
+      var createSwiper3 = function createSwiper3() {
+        if (window.innerWidth >= 768) {
+          if (swiperInstance3) {
+            swiperInstance3.destroy();
+            swiperInstance3 = null;
+          }
+          clearSwiperStyles(flowSwiper3);
+        } else {
+          if (!swiperInstance3) {
+            swiperInstance3 = new Swiper(flowSwiper3, {
+              loop: true,
+              spaceBetween: 45,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              pagination: {
+                el: flowSwiper3.querySelector(".swiper-pagination"),
+                clickable: true
+              },
+              navigation: {
+                nextEl: document.querySelector(".js-flow-swiper-next3"),
+                prevEl: document.querySelector(".js-flow-swiper-prev3")
+              },
+              on: {
+                init: function init() {
+                  applyCommonSwiperStyles();
+                }
+              }
+            });
+          }
+        }
+      };
+      createSwiper3();
+      $(window).on("resize", createSwiper3);
+    }
+  }
+  function clearSwiperStyles(container) {
+    if (!container) return;
+    container.style = ""; // Swiperコンテナのスタイルをクリア
+    var pagination = container.querySelector(".swiper-pagination");
+    if (pagination) pagination.style = ""; // ページネーションのスタイルをクリア
+    var prevButton = container.querySelector(".js-flow-swiper-prev"); // 前へボタンのスタイルをクリア
+    if (prevButton) prevButton.style = "";
+    var nextButton = container.querySelector(".js-flow-swiper-next"); // 次へボタンのスタイルをクリア
+    if (nextButton) nextButton.style = "";
+  }
   function applyCommonSwiperStyles() {
     var flows = document.querySelectorAll(".p-sub-flow");
     flows.forEach(function (flow) {
@@ -172,151 +301,6 @@ jQuery(function ($) {
       flow.style.visibility = "visible";
     });
   }
-  function initializeFlowSwiper1() {
-    var flowSwiper1 = document.querySelector(".js-flow-swiper1");
-
-    // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper1 && document.querySelector(".js-flow-swiper-next1") && document.querySelector(".js-flow-swiper-prev1")) {
-      var createSwiper = function createSwiper() {
-        if (window.innerWidth >= 768) {
-          if (swiperInstance) {
-            swiperInstance.destroy();
-            swiperInstance = null;
-          }
-          clearSwiperStyles(flowSwiper1);
-          return;
-        }
-        if (!swiperInstance) {
-          swiperInstance = new Swiper(flowSwiper1, {
-            loop: true,
-            spaceBetween: 45,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            pagination: {
-              el: flowSwiper1.querySelector(".swiper-pagination"),
-              clickable: true
-            },
-            navigation: {
-              nextEl: document.querySelector(".js-flow-swiper-next1"),
-              prevEl: document.querySelector(".js-flow-swiper-prev1")
-            },
-            // Swiper初期化後に共通スタイル適用関数を呼び出し
-            on: {
-              init: function init() {
-                applyCommonSwiperStyles();
-              }
-            }
-          });
-        }
-      };
-      var swiperInstance = null;
-      createSwiper();
-      window.addEventListener("resize", createSwiper);
-    }
-  }
-  function initializeFlowSwiper2() {
-    var flowSwiper2 = document.querySelector(".js-flow-swiper2");
-
-    // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper2 && document.querySelector(".js-flow-swiper-next2") && document.querySelector(".js-flow-swiper-prev2")) {
-      var createSwiper = function createSwiper() {
-        if (window.innerWidth >= 768) {
-          if (swiperInstance) {
-            swiperInstance.destroy();
-            swiperInstance = null;
-          }
-          clearSwiperStyles(flowSwiper2);
-          return;
-        }
-        if (!swiperInstance) {
-          swiperInstance = new Swiper(flowSwiper2, {
-            loop: true,
-            spaceBetween: 45,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            pagination: {
-              el: flowSwiper2.querySelector(".swiper-pagination"),
-              clickable: true
-            },
-            navigation: {
-              nextEl: document.querySelector(".js-flow-swiper-next2"),
-              prevEl: document.querySelector(".js-flow-swiper-prev2")
-            },
-            // Swiper初期化後に共通スタイル適用関数を呼び出し
-            on: {
-              init: function init() {
-                applyCommonSwiperStyles();
-              }
-            }
-          });
-        }
-      };
-      var swiperInstance = null;
-      createSwiper();
-      window.addEventListener("resize", createSwiper);
-    }
-  }
-  function initializeFlowSwiper3() {
-    var flowSwiper3 = document.querySelector(".js-flow-swiper3");
-
-    // コンテナとナビゲーションボタンが存在するかを確認
-    if (flowSwiper3 && document.querySelector(".js-flow-swiper-next3") && document.querySelector(".js-flow-swiper-prev3")) {
-      var createSwiper = function createSwiper() {
-        if (window.innerWidth >= 768) {
-          if (swiperInstance) {
-            swiperInstance.destroy();
-            swiperInstance = null;
-          }
-          clearSwiperStyles(flowSwiper3);
-          return;
-        }
-        if (!swiperInstance) {
-          swiperInstance = new Swiper(flowSwiper3, {
-            initialSlide: 0,
-            loop: true,
-            spaceBetween: 45,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            pagination: {
-              el: flowSwiper3.querySelector(".swiper-pagination"),
-              clickable: true
-            },
-            navigation: {
-              nextEl: document.querySelector(".js-flow-swiper-next3"),
-              prevEl: document.querySelector(".js-flow-swiper-prev3")
-            },
-            // Swiper初期化後に共通スタイル適用関数を呼び出し
-            on: {
-              init: function init() {
-                applyCommonSwiperStyles();
-              }
-            }
-          });
-        }
-      };
-      var swiperInstance = null;
-      createSwiper();
-      window.addEventListener("resize", createSwiper);
-    }
-  }
-  function clearSwiperStyles(container) {
-    if (!container) return;
-    // Swiperコンテナのスタイルをクリア
-    container.style = "";
-    // ページネーションとナビゲーションボタンのスタイルをクリア
-    var pagination = container.querySelector(".swiper-pagination");
-    if (pagination) pagination.style = "";
-    var prevButton = document.querySelector(container.getAttribute("data-prev-button"));
-    if (prevButton) prevButton.style = "";
-    var nextButton = document.querySelector(container.getAttribute("data-next-button"));
-    if (nextButton) nextButton.style = "";
-  }
-  window.addEventListener("load", function () {
-    initializeAboutSwiper();
-    initializeFlowSwiper1();
-    initializeFlowSwiper2();
-    initializeFlowSwiper3();
-  });
 });
 
 // modal
