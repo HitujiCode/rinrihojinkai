@@ -13,16 +13,10 @@ body {
 }
 
 body.is-fixed {
-	height: 100%;
+	overflow: hidden;
 	position: fixed;
+	top: 0;
 	width: 100%;
-}
-
-.l-body {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 1fr auto;
-	min-height: 100vh;
 }
 
 .u-desktop {

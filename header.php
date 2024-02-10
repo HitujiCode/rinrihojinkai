@@ -18,7 +18,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body class="l-body">
+<body>
   <header class="p-header js-header">
     <div class="p-header__inner">
       <?php if (is_front_page()) :
