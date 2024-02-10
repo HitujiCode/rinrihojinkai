@@ -357,8 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       modal.style.visibility = "visible";
       updateButtonStates();
-      // document.body.style.overflow = "hidden";
-      document.body.classList.add("is-fixed");
+      document.body.style.overflow = "hidden";
     };
     const updateModalImage = function updateModalImage(index) {
       if (modalImg) {
@@ -401,8 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.addEventListener("transitionend", function onTransitionEnd() {
         modal.style.visibility = "hidden";
         modal.removeEventListener("transitionend", onTransitionEnd);
-        // document.body.style.overflow = "";
-        document.body.classList.remove("is-fixed");
+        document.body.style.overflow = "";
       });
     };
     const modalWrap = modal.querySelector(".p-modal__wrap");
