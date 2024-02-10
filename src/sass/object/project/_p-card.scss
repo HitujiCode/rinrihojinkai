@@ -21,7 +21,7 @@
   transform: translate(-50%, -50%);
   width: calc(613 / 630 * 100%);
   height: calc(338 / 354 * 100%);
-  border: 2px solid $base;
+  border: 1px solid $base;
   z-index: 1;
   @include mq("md") {
     border-radius: rem(4);

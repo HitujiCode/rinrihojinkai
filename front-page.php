@@ -168,7 +168,7 @@
               <div class="p-list__item-head">
                 <h3 class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
                   真摯に向き合うカウンセリング</h3>
-                <span class="p-list__head-sub">（自己同一性、存在証明、同性愛など）</span>
+                <span class="p-list__item-head-sub">（自己同一性、存在証明、同性愛など）</span>
               </div>
               <p class="p-list__item-text">未来の幸せの形はさまざまです。私たちはそれを祝福致します。全ての幸せへの尊重を表現し、受け入れ、推奨する世界を一緒に創りたいと考えています。
               </p>
@@ -185,12 +185,12 @@
               </picture>
             </div>
             <div class="p-list__item-body">
-              <div class="p-list__item-head">
+              <div class="p-list__item-head--delta">
                 <h3 class="p-list__item-head-main">かけがえのない思い出になる
                   <br>
                   記念撮影
                 </h3>
-                <span class="p-list__head-sub">（ロケーションの提案、ヘアメイク、小道具貸出など）</span>
+                <span class="p-list__item-head-sub">（ロケーションの提案、ヘアメイク、小道具貸出など）</span>
                 </d>
                 <p class="p-list__item-text">
                   同性、年齢、未婚や既婚問わず、ご自身の「今」を残す撮影をいたします。ロケーションの提案、ヘアメイクや小道具の貸出も承っております。一緒に思い出を作りましょう！

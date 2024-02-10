@@ -75,7 +75,6 @@
 
 .p-about__list {
   @include mq("md") {
-    margin-top: rem(55);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(30);
@@ -104,7 +103,7 @@
   overflow-wrap: anywhere;
   @include mq("md") {
     font-size: rem(22);
-    line-height: 1.2;
+    line-height: calc(32 / 22);
   }
 }
 

@@ -23,7 +23,7 @@
 
 .p-list__item-img {
   position: relative;
-  margin-left: calc(50.89% - 50vw);
+  margin-left: calc(50% - 50vw);
   border-radius: 0 rem(6) rem(6) 0;
   @include mq("md") {
     flex: 1;
@@ -64,7 +64,7 @@
   background-position: center center;
   background-size: contain;
   @include mq("md") {
-    width: calc(323 / 1400 * 100vw);
+    width: calc(340 / 1400 * 100vw);
     height: calc(75 / 1400 * 100vw);
     top: calc(-38 / 1400 * 100vw);
   }
@@ -117,7 +117,7 @@
   }
 }
 
-.p-list__head-sub {
+.p-list__item-head-sub {
   font-size: rem(12);
   line-height: calc(50 / 24);
   letter-spacing: 0.05em;
@@ -126,6 +126,16 @@
     margin-top: rem(10);
     font-size: rem(14);
     line-height: 1;
+  }
+}
+
+.p-list__item-head--delta {
+  @extend .p-list__item-head;
+}
+
+.p-list__item-head--delta .p-list__item-head-main {
+  @include mq("md") {
+    letter-spacing: 0.1em;
   }
 }
 
