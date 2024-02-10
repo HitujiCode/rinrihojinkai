@@ -318,7 +318,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       modal.style.visibility = "visible";
       updateButtonStates();
-      document.body.style.overflow = "clip";
+      // document.body.style.overflow = "hidden";
+      document.body.classList.add("is-fixed");
     };
     var updateModalImage = function updateModalImage(index) {
       if (modalImg) {
@@ -354,7 +355,8 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.addEventListener("transitionend", function onTransitionEnd() {
         modal.style.visibility = "hidden";
         modal.removeEventListener("transitionend", onTransitionEnd);
-        document.body.style.overflow = "";
+        // document.body.style.overflow = "";
+        document.body.classList.remove("is-fixed");
       });
     };
     var modalWrap = modal.querySelector(".p-modal__wrap");
@@ -395,20 +397,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target === modalInner || e.target === modalInner) {
+      if (e.target === modal || e.target === modalInner || e.target === modalWrap) {
         closeModal();
       }
     });
-
-    // modalWrap をクリックした場合にも closeModal を実行
-    if (modalWrap) {
-      modalWrap.addEventListener("click", function (e) {
-        if (e.target === modalWrap) {
-          // クリックされた要素が modalWrap 自身である場合のみ
-          closeModal();
-        }
-      });
-    }
     if (modalClose) {
       modalClose.addEventListener("click", closeModal);
     }

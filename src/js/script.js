@@ -343,11 +343,11 @@ jQuery(function ($) {
 
 // modal
 document.addEventListener("DOMContentLoaded", function () {
-  var modal = document.querySelector(".js-modal");
+  const modal = document.querySelector(".js-modal");
 
   // `modal` 要素が存在する場合のみ処理を実行
   if (modal) {
-    var openModal = function openModal(imgSrc) {
+    const openModal = function openModal(imgSrc) {
       if (modalImg) {
         modalImg.src = imgSrc;
       }
@@ -357,9 +357,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       modal.style.visibility = "visible";
       updateButtonStates();
-      document.body.style.overflow = "clip";
+      // document.body.style.overflow = "hidden";
+      document.body.classList.add("is-fixed");
     };
-    var updateModalImage = function updateModalImage(index) {
+    const updateModalImage = function updateModalImage(index) {
       if (modalImg) {
         // 既存のアニメーションクラスをクリア
         modalImg.classList.remove("fadeIn");
@@ -381,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       updateButtonStates();
     };
-    var updateButtonStates = function updateButtonStates() {
+    const updateButtonStates = function updateButtonStates() {
       if (prevButton) {
         prevButton.classList.toggle("is-disabled", currentIndex <= 0);
       }
@@ -392,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
     };
-    var closeModal = function closeModal() {
+    const closeModal = function closeModal() {
       modal.classList.remove("show");
       if (modalWrap) {
         modalWrap.classList.remove("show");
@@ -400,21 +401,22 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.addEventListener("transitionend", function onTransitionEnd() {
         modal.style.visibility = "hidden";
         modal.removeEventListener("transitionend", onTransitionEnd);
-        document.body.style.overflow = "";
+        // document.body.style.overflow = "";
+        document.body.classList.remove("is-fixed");
       });
     };
-    var modalWrap = modal.querySelector(".p-modal__wrap");
-    var modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
-    var modalImgContainer = modal.querySelector(".p-modal__img");
-    var modalImg = modalImgContainer
+    const modalWrap = modal.querySelector(".p-modal__wrap");
+    const modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
+    const modalImgContainer = modal.querySelector(".p-modal__img");
+    const modalImg = modalImgContainer
       ? modalImgContainer.querySelector("img")
       : null;
-    var modalClose = document.querySelector(".p-modal__close-button");
-    var prevButton = document.querySelector(".p-modal__prev");
-    var nextButton = document.querySelector(".p-modal__next");
-    var currentIndex = 0;
-    var imageSources = [];
-    var modalTriggers = document.querySelectorAll(".js-modal-trigger");
+    const modalClose = document.querySelector(".p-modal__close-button");
+    const prevButton = document.querySelector(".p-modal__prev");
+    const nextButton = document.querySelector(".p-modal__next");
+    let currentIndex = 0;
+    let imageSources = [];
+    const modalTriggers = document.querySelectorAll(".js-modal-trigger");
     modalTriggers.forEach(function (trigger, index) {
       imageSources.push(trigger.getAttribute("href"));
       trigger.setAttribute("data-index", index);
@@ -446,21 +448,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (
         e.target === modal ||
         e.target === modalInner ||
-        e.target === modalInner
+        e.target === modalWrap
       ) {
         closeModal();
       }
     });
 
-    // modalWrap をクリックした場合にも closeModal を実行
-    if (modalWrap) {
-      modalWrap.addEventListener("click", function (e) {
-        if (e.target === modalWrap) {
-          // クリックされた要素が modalWrap 自身である場合のみ
-          closeModal();
-        }
-      });
-    }
     if (modalClose) {
       modalClose.addEventListener("click", closeModal);
     }
