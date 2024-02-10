@@ -13,13 +13,13 @@
           </div>
           <div class="p-fv__img swiper-slide">
             <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2_pc@2x.webp')); ?>" width="" height="" />
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2_pc@2x.webp')); ?>" width="764" height="509" />
               <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="キービジュアル" width="345" height="230" />
             </picture>
           </div>
           <div class="p-fv__img swiper-slide">
             <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3_pc@2x.webp')); ?>" width="" height="" />
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3_pc@2x.webp')); ?>" width="764" height="509" />
               <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="キービジュアル" width="345" height="230" />
             </picture>
           </div>
@@ -128,9 +128,10 @@
                   <div class="p-about__item-img">
                     <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="対象のイラスト" width="97" height="90" />
                   </div>
-                  <p class="<?php echo esc_html($item['head']) === 'ドローン' ? 'p-about__item-text--delta' : 'p-about__item-text'; ?>">
+                  <p class="<?php echo esc_html($item['head']) === 'ドローン' || esc_html($item['head']) === 'ソロ' ? 'p-about__item-text--delta' : 'p-about__item-text'; ?>">
                     <?php echo $item['text']; ?>
                   </p>
+
                 </li>
               <?php endforeach; ?>
             </ul>
@@ -294,21 +295,33 @@
                 <li class="p-cards__item">
                   <a href="<?php the_permalink(); ?>" class="p-card">
                     <div class="p-card__img">
-                      <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
-                      <?php else : ?>
-                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
-                      <?php endif; ?>
-                    </div>
-                    <div class="p-card__category">
                       <?php
-                      $terms = get_the_terms($post->ID, 'genre');
-                      if (!empty($categories)) : // カテゴリがある場合のみ実行
-                        foreach ($categories as $category) {
-                          echo '<span class="c-category">' . esc_html($category->name) . '</span>';
-                        }
+                      // サムネイルがあるかどうかをチェック
+                      if (has_post_thumbnail()) :
+                        // サムネイルの HTML を直接出力
+                        echo get_the_post_thumbnail(null, 'full');
+                      else :
+                        // CFSで指定された画像があるかどうかをチェック
+                        $works_gallery = CFS()->get('works_gallery');
+                        $cfs_image_url = !empty($works_gallery) ? $works_gallery[0]['works_img'] : '';
+
+                        // CFSで指定された画像がある場合、その画像を直接表示
+                        if (!empty($cfs_image_url)) :
+                          echo '<img src="' . esc_url($cfs_image_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+                        else :
+                          // サムネイルもCFSの画像もない場合、'No Image' 画像を表示
+                          echo '<img src="' . esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')) . '" alt="No Image">';
+                        endif;
                       endif;
                       ?>
+                    </div>
+                    <div class="p-card__category">
+                      <?php $terms = get_the_terms(get_the_ID(), 'genre'); ?>
+                      <?php if ($terms && !is_wp_error($terms)) : ?>
+                        <?php foreach ($terms as $term) : ?>
+                          <span class="c-category"><?php echo esc_html($term->name); ?></span>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
                     </div>
                     <p class="p-card__title"><?php the_title(); ?></p>
                   </a>

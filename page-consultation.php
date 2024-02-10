@@ -83,7 +83,7 @@
                 <a href="<?php the_permalink(); ?>" class="p-card">
                   <div class="p-card__img">
                     <?php if (has_post_thumbnail()) : ?>
-                      <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
+                      <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="300" height="169" loading="lazy" />
                     <?php else : ?>
                       <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="315" height="178" loading="lazy" />
                     <?php endif; ?>
