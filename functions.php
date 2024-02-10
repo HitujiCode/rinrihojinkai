@@ -70,6 +70,15 @@ function wpcf7_autop_return_false()
   return false;
 }
 
+// 絵文字設定の削除
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+// RSDの削除
+remove_action('wp_head', 'rsd_link');
+
+
+
 // エディターを非表示
 function my_custom_init()
 {
