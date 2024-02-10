@@ -24,19 +24,23 @@ jQuery(function ($) {
   });
 
   // Drawerの開閉
+  let scrollPosition = 0;
   function openDrawer() {
+    scrollPosition = $(window).scrollTop();
     $(".js-drawer").addClass("is-open");
     $(".js-hamburger").addClass("is-open");
-    $("body").css("overflow", "clip");
+    $("body").addClass("is-fixed").css("top", -scrollPosition);
   }
+
   function closeDrawer() {
     $(".js-drawer").removeClass("is-open");
     $(".js-hamburger").removeClass("is-open");
-    $("body").css("overflow", "");
+    $("body").removeClass("is-fixed");
+    $(window).scrollTop(scrollPosition);
   }
 
   // ページトップボタン
-  var pageTop = $(".js-pagetop");
+  const pageTop = $(".js-pagetop");
   pageTop.hide();
   $(window).scroll(function () {
     var scrollPosition = $(this).scrollTop();

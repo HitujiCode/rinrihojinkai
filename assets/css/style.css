@@ -12,6 +12,12 @@ body {
 	position: relative;
 }
 
+body.is-fixed {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+}
+
 .l-body {
 	display: grid;
 	grid-template-columns: 100%;
