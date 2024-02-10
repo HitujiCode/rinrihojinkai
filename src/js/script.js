@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     };
     const modalWrap = modal.querySelector(".p-modal__wrap");
-    const modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
+    const modalInner = modal.querySelector(".p-modal__inner");
     const modalImgContainer = modal.querySelector(".p-modal__img");
     const modalImg = modalImgContainer
       ? modalImgContainer.querySelector("img")

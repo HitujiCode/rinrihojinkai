@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     };
     var modalWrap = modal.querySelector(".p-modal__wrap");
-    var modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
+    var modalInner = modal.querySelector(".p-modal__inner");
     var modalImgContainer = modal.querySelector(".p-modal__img");
     var modalImg = modalImgContainer ? modalImgContainer.querySelector("img") : null;
     var modalClose = document.querySelector(".p-modal__close-button");

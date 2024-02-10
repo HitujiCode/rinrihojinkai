@@ -1396,10 +1396,13 @@ select::-ms-expand {
 	position: relative;
 	width: -moz-fit-content;
 	width: fit-content;
+	width: 100%;
 }
 
 .p-modal__wrap {
 	max-height: 100dvh;
+	overflow-x: clip;
+	overflow-y: auto;
 	padding: 12.8vw 0;
 	position: absolute;
 	position: relative;
@@ -1410,6 +1413,10 @@ select::-ms-expand {
 	width: fit-content;
 }
 
+.p-modal__wrap::-webkit-scrollbar {
+	display: none;
+}
+
 .p-modal__wrap.show {
 	transform: translateY(-50%) scale(1);
 }
@@ -1417,8 +1424,7 @@ select::-ms-expand {
 .p-modal__img {
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	height: 100%;
-	max-height: calc(100vh - 5rem);
+	height: auto;
 	transition: opacity 0.7s ease-out;
 	user-select: none;
 	width: -moz-fit-content;
@@ -1428,7 +1434,6 @@ select::-ms-expand {
 .p-modal__img img {
 	-o-object-fit: contain;
 	height: 100%;
-	max-height: inherit;
 	object-fit: contain;
 	width: 100%;
 }
@@ -2778,10 +2783,6 @@ a[href^="tel:"] {
 
 .p-modal__wrap {
 	padding: 5.1428571429vw 0;
-}
-
-.p-modal__img {
-	max-height: 80vh;
 }
 
 .p-modal__close-button {
