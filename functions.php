@@ -126,7 +126,88 @@ function get_attachment_id_from_url($image_url)
   return $attachment_id;
 }
 
-// // パンくずリスト文字数制限
+/* カスタム投稿のページャー対策のためのクエリ変更 */
+// 通常の投稿
+function custom_taxonomy_normal_query($query)
+{
+  if (!is_admin() && $query->is_main_query() && is_tax('genre')) {
+    $query->set('post_type', 'works');
+    $query->set('posts_per_page', 12);
+    $query->set('tax_query', array(
+      array(
+        'taxonomy' => 'genre',
+        'field'    => 'slug',
+        'terms'    => array('jusan-mairi', 'drone'),
+        'operator' => 'NOT IN',
+      ),
+    ));
+  }
+}
+add_action('pre_get_posts', 'custom_taxonomy_normal_query');
+
+function custom_taxonomy_query_adjustments($query)
+{
+  if (!is_admin() && $query->is_main_query()) {
+    if (is_tax('genre', 'jusan-mairi')) {
+      $query->set('post_type', 'works');
+      $query->set('posts_per_page', 12);
+      $query->set('tax_query', array(
+        array(
+          'taxonomy' => 'genre',
+          'field'    => 'slug',
+          'terms'    => 'jusan-mairi',
+        ),
+      ));
+    } elseif (is_tax('genre', 'drone')) {
+      $query->set('post_type', 'works');
+      $query->set('posts_per_page', 12);
+      $query->set('tax_query', array(
+        array(
+          'taxonomy' => 'genre',
+          'field'    => 'slug',
+          'terms'    => 'drone',
+        ),
+      ));
+    }
+  }
+}
+add_action('pre_get_posts', 'custom_taxonomy_query_adjustments');
+
+// // 十三詣り
+// function custom_taxonomy_jusan_mairi_query($query)
+// {
+//   if (!is_admin() && $query->is_main_query() && is_tax('genre')) {
+//     $query->set('post_type', 'works');
+//     $query->set('posts_per_page', 12);
+//     $query->set('tax_query', array(
+//       array(
+//         'taxonomy' => 'genre',
+//         'field'    => 'slug',
+//         'terms'    => 'jusan-mairi',
+//       ),
+//     ));
+//   }
+// }
+// add_action('pre_get_posts', 'custom_taxonomy_jusan_mairi_query');
+
+// // ドローン
+// function custom_taxonomy_drone_query($query)
+// {
+//   if (!is_admin() && $query->is_main_query() && is_tax('genre')) {
+//     $query->set('post_type', 'works');
+//     $query->set('posts_per_page', 12);
+//     $query->set('tax_query', array(
+//       array(
+//         'taxonomy' => 'genre',
+//         'field'    => 'slug',
+//         'terms'    => 'drone',
+//       ),
+//     ));
+//   }
+// }
+// add_action('pre_get_posts', 'custom_taxonomy_drone_query');
+
+// パンくずリスト文字数制限
 add_filter('bcn_breadcrumb_title', 'truncate_bc_title', 10, 3);
 function truncate_bc_title($title, $type, $id)
 {
@@ -167,7 +248,8 @@ add_filter('custom_menu_order', 'custom_menu_order');
 add_filter('menu_order', 'custom_menu_order');
 
 // 不要なメニュー画面の削除
-function remove_menu(){
+function remove_menu()
+{
   remove_menu_page('edit-comments.php'); // コメント
 }
 add_action('admin_menu', 'remove_menu');

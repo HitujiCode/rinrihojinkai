@@ -8,22 +8,7 @@
     <div class="p-archive-works__inner l-inner">
       <div class="p-archive-works__content">
         <ul class="p-cards">
-          <?php
-          $args = array(
-            'post_type' => 'works',
-            'posts_per_page' => 12,
-            'tax_query' => array(
-              array(
-                'taxonomy' => 'genre',
-                'field'    => 'slug',
-                'terms'    => array('drone'),
-              ),
-            ),
-          );
-          $query = new WP_Query($args);
-
-          if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-          ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <li class="p-cards__item">
                 <a href="<?php the_permalink(); ?>" class="p-card">
                   <div class="p-card__img">

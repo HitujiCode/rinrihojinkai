@@ -8,22 +8,7 @@
     <div class="p-archive-works__inner l-inner">
       <div class="p-archive-works__content">
         <ul class="p-cards">
-          <?php
-          $jusan_mairi_args = array(
-            'post_type' => 'works',
-            'posts_per_page' => 12,
-            'tax_query' => array(
-              array(
-                'taxonomy' => 'genre',
-                'field'    => 'slug',
-                'terms'    => 'jusan-mairi',
-              ),
-            ),
-          );
-          $jusan_mairi_query = new WP_Query($jusan_mairi_args);
-
-          if ($jusan_mairi_query->have_posts()) : while ($jusan_mairi_query->have_posts()) : $jusan_mairi_query->the_post();
-          ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <li class="p-cards__item">
                 <a href="<?php the_permalink(); ?>" class="p-card">
                   <div class="p-card__img">
