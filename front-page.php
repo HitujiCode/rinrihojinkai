@@ -337,7 +337,7 @@
             ?>
           </ul>
           <div class="p-works__button">
-            <a class="c-button" href="<?php echo esc_url(home_url("/works-overview")) ?>"><span>view all</span></a>
+            <a class="c-button" href="<?php echo esc_url(home_url("/works")) ?>"><span>view all</span></a>
           </div>
         </div>
       </div>

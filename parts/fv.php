@@ -36,12 +36,6 @@ $pageSettings = [
     "title_en" => "consultation from",
     "title_ja" => $current_post_title,
   ],
-  "works-overview" => [
-    "image_pc" => "/assets/images/works/fv_pc@2x.webp",
-    "image_sp" => "/assets/images/works/fv@2x.webp",
-    "title_en" => "works",
-    "title_ja" => "撮影事例"
-  ],
   "works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
     "image_sp" => "/assets/images/works/fv@2x.webp",
@@ -54,6 +48,24 @@ $pageSettings = [
     "title_name_works" => "$works_name",
     "title_en" => "photo shoot",
     "title_ja" => "$current_post_title"
+  ],
+  "taxonomy-normal" => [
+    "image_pc" => "/assets/images/works/fv_pc@2x.webp",
+    "image_sp" => "/assets/images/works/fv@2x.webp",
+    "title_en" => "works",
+    "title_ja" => "通常の撮影"
+  ],
+  "taxonomy-jusan-mairi" => [
+    "image_pc" => "/assets/images/works/fv_pc@2x.webp",
+    "image_sp" => "/assets/images/works/fv@2x.webp",
+    "title_en" => "works",
+    "title_ja" => "十三詣り"
+  ],
+  "taxonomy-drone" => [
+    "image_pc" => "/assets/images/works/fv_pc@2x.webp",
+    "image_sp" => "/assets/images/works/fv@2x.webp",
+    "title_en" => "works",
+    "title_ja" => "ドローン"
   ],
   "flow" => [
     "image_pc" => "/assets/images/flow/fv_pc@2x.webp",
@@ -81,8 +93,12 @@ function getCurrentPageType()
     return 'single-works';
   } elseif (is_post_type_archive('works')) { // 'works' カスタム投稿タイプのアーカイブページ
     return 'works';
-  } elseif (is_tax() || is_category() || is_tag()) {
-    return 'taxonomy';
+  } elseif (is_tax('genre', 'normal')) {
+    return 'taxonomy-normal';
+  } elseif (is_tax('genre', 'jusan-mairi')) {
+    return 'taxonomy-jusan-mairi';
+  } elseif (is_tax('genre', 'drone')) {
+    return 'taxonomy-drone';
   } elseif (is_404()) { // 404ページの判定を修正
     return '404'; // 404ページの場合に '404' を返す
   } elseif (is_page()) {

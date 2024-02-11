@@ -74,7 +74,7 @@
             </div>
             <div class="p-photo-item__buttons">
               <div class="p-photo-item__button"> <a href="<?php echo esc_url(home_url('/flow')); ?>" class="c-button">flow</a></div>
-              <div class="p-photo-item__button"><a href="<?php echo esc_url(home_url("/works-overview")); ?>" class="c-button">works</a></div>
+              <div class="p-photo-item__button"><a href="<?php echo esc_url(home_url("/works")); ?>" class="c-button">works</a></div>
             </div>
           </li>
         <?php endforeach; ?>

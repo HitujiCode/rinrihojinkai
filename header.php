@@ -43,7 +43,7 @@
                 <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/case")) ?>"><span>case</span></a>
               </li>
               <li class="p-header__nav-item">
-                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/works-overview")) ?>"><span>works</span></a>
+                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
               </li>
               <li class="p-header__nav-item">
                 <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/flow")) ?>"><span>flow</span></a>
@@ -80,7 +80,7 @@
                     <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/case")) ?>"><span>case</span></a>
                   </li>
                   <li class="p-global-nav__item">
-                    <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/works-overview")) ?>"><span>works</span></a>
+                    <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
                   </li>
                   <li class="p-global-nav__item">
                     <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/flow")) ?>"><span>flow</span></a>
