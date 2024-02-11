@@ -139,3 +139,35 @@ function truncate_bc_title($title, $type, $id)
 
   return $truncated;
 }
+
+// メニュー画面の名称変更
+function change_menu_name()
+{
+  global $menu;
+  global $submenu;
+
+  $menu[5][0] = '相談事例';
+}
+add_action('admin_menu', 'change_menu_name');
+
+// メニュー画面の並び順変更
+function custom_menu_order($menu_ord)
+{
+  if (!$menu_ord) return true;
+
+  return array(
+    'index.php',  //ダッシュボード
+    'edit.php',  //投稿
+    'edit.php?post_type=works',
+    'upload.php',  //メディア
+    'edit.php?post_type=page',  //固定ページ
+  );
+}
+add_filter('custom_menu_order', 'custom_menu_order');
+add_filter('menu_order', 'custom_menu_order');
+
+// 不要なメニュー画面の削除
+function remove_menu(){
+  remove_menu_page('edit-comments.php'); // コメント
+}
+add_action('admin_menu', 'remove_menu');
