@@ -5,13 +5,9 @@
   font-weight: $medium;
   color: $white;
   line-height: 1;
-  padding: rem(6) rem(13);
+  padding: rem(6) rem(13) rem(6);
   background-color: $darkgray;
   border-radius: rem(25);
   width: fit-content;
   height: fit-content;
-  @include mq("md") {
-    font-size: rem(14);
-    padding: rem(5) rem(14) rem(6);
-  }
 }

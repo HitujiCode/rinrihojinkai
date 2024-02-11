@@ -77,9 +77,6 @@
             wp_reset_postdata(); ?>
           </ul>
         </div>
-        <div class="p-archive-works__button">
-          <a href="<?php echo esc_url(home_url('/works')); ?>" class="c-button">view all</a>
-        </div>
       </section>
       <!-- 十三詣り -->
       <section class="p-works-overview__section p-archive-works l-common">
