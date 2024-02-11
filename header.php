@@ -10,7 +10,7 @@
   <meta property="og:title" content="" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
-  <meta property="og:site_name" content="" />
+  <meta property="og:site_name" content="FIORITURA" />
   <meta property="og:description" content="" />
   <?php if (is_404()) : ?>
     <meta http-equiv="refresh" content=" 3; url=<?php echo esc_url(home_url("")); ?>">
