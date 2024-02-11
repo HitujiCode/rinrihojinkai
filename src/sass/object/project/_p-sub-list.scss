@@ -101,13 +101,10 @@
   }
 }
 
-.p-sub-list__item-head {
-  font-weight: $semi-bold;
-}
-
 .p-sub-list__item-head-main {
   display: block;
   font-size: rem(16);
+  font-weight: $semi-bold;
   line-height: calc(50 / 32);
   letter-spacing: 0.05em;
   overflow-wrap: anywhere;
@@ -122,6 +119,7 @@
 .p-sub-list__head-sub {
   display: block;
   font-size: rem(12);
+  font-weight: $semi-bold;
   line-height: calc(50 / 24);
   letter-spacing: 0.05em;
   @include mq("md") {

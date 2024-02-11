@@ -1898,14 +1898,11 @@ select::-ms-expand {
 	margin-top: 1.25rem;
 }
 
-.p-sub-list__item-head {
-	font-weight: 600;
-}
-
 .p-sub-list__item-head-main {
 	word-wrap: anywhere;
 	display: block;
 	font-size: 1rem;
+	font-weight: 600;
 	letter-spacing: 0.05em;
 	line-height: 1.5625;
 	word-break: keep-all;
@@ -1914,6 +1911,7 @@ select::-ms-expand {
 .p-sub-list__head-sub {
 	display: block;
 	font-size: 0.75rem;
+	font-weight: 600;
 	letter-spacing: 0.05em;
 	line-height: 2.0833333333;
 }
