@@ -24,6 +24,7 @@
 .p-case-article__top-category {
   display: flex;
   gap: rem(10);
+  flex-wrap: wrap;
   @include mq("md") {
     margin-top: rem(2);
   }

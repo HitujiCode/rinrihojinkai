@@ -582,6 +582,7 @@ select::-ms-expand {
 
 .p-case-article__top-category {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 0.625rem;
 }
 
