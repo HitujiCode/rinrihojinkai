@@ -1,9 +1,13 @@
 @use "global" as *;
 
-.p-works-article__body {
+.p-works-article__categorys {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+  @include mq("md") {
+    justify-content: center;
+    gap: rem(10);
+  }
 }
 
 .p-works-article__title {

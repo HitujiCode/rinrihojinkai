@@ -1923,10 +1923,10 @@ select::-ms-expand {
 	margin-top: 0.625rem;
 }
 
-.p-works-article__body {
-	align-items: center;
+.p-works-article__categorys {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 }
 
 .p-works-article__title {
@@ -3046,6 +3046,11 @@ a[href^="tel:"] {
 	letter-spacing: 0.05em;
 	line-height: 2.1428571429;
 	margin-top: 1rem;
+}
+
+.p-works-article__categorys {
+	gap: 0.625rem;
+	justify-content: center;
 }
 
 .p-works-article__title {

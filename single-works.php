@@ -7,7 +7,7 @@
   <article class="p-works-article l-common">
     <div class="p-works-article__inner l-inner">
       <div class="p-works-article__content">
-        <div class="p-works-article__body">
+        <div class="p-works-article__categorys">
           <?php
           $terms = get_the_terms(get_the_ID(), 'genre');
           if ($terms && !is_wp_error($terms)) :
