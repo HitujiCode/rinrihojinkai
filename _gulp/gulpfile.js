@@ -38,7 +38,7 @@ const destPath = {
   js: "../assets/js/",
   img: "../assets/images/",
   font: "../assets/fonts/",
-  html: "../",
+  // html: "../",
 };
 
 // WordPress反映用
@@ -60,9 +60,9 @@ const browsers = [
 ];
 
 // HTMLファイルのコピー
-const htmlCopy = () => {
-  return src(srcPath.html).pipe(dest(destPath.html));
-};
+// const htmlCopy = () => {
+//   return src(srcPath.html).pipe(dest(destPath.html));
+// };
 
 const fontCopy = () => {
   return src(srcPath.font).pipe(dest(destPath.font));
@@ -211,7 +211,7 @@ const watchFiles = () => {
   watch(srcPath.css, series(cssSass, browserSyncReload));
   watch(srcPath.js, series(jsBabel, browserSyncReload));
   watch(srcPath.img, series(imgImagemin, browserSyncReload));
-  watch(srcPath.html, series(htmlCopy, browserSyncReload));
+  // watch(srcPath.html, series(htmlCopy, browserSyncReload));
   watch(srcPath.font, series(fontCopy, browserSyncReload));
   // watch(srcPath.php, browserSyncReload);
   watch(srcPath.php).on("change", browserSync.reload);
@@ -219,16 +219,9 @@ const watchFiles = () => {
 
 // ブラウザシンク付きの開発用タスク
 exports.default = series(
-  series(cssSass, jsBabel, imgImagemin, htmlCopy, fontCopy),
+  series(cssSass, jsBabel, imgImagemin, fontCopy),
   parallel(watchFiles, browserSyncFunc)
 );
 
 // 本番用タスク
-exports.build = series(
-  clean,
-  cssSass,
-  jsBabel,
-  imgImagemin,
-  htmlCopy,
-  fontCopy
-);
+exports.build = series(clean, cssSass, jsBabel, imgImagemin, fontCopy);

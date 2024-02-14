@@ -168,8 +168,7 @@ select::-ms-expand {
 	display: none;
 }
 
-.c-button,
-.c-button--blank {
+.c-button {
 	background-color: #79c9bc;
 	color: #fff;
 	display: inline-block;
@@ -182,31 +181,6 @@ select::-ms-expand {
 	text-transform: uppercase;
 	transition: all 0.3s ease;
 	width: 100%;
-}
-
-.c-button--blank {
-	text-transform: none;
-	text-transform: initial;
-}
-
-.c-button--blank span {
-	align-items: center;
-	display: inline-flex;
-	padding-right: 1.1875rem;
-	position: relative;
-}
-
-.c-button--blank span::before {
-	background-image: url(../images/common/icon-blank.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	content: "";
-	display: block;
-	height: 0.625rem;
-	position: absolute;
-	right: 0;
-	width: 0.625rem;
 }
 
 .c-category {
@@ -1238,9 +1212,55 @@ select::-ms-expand {
 	margin-top: 1.875rem;
 }
 
-.p-instagram__button {
-	margin-top: 3.125rem;
-	text-align: center;
+.p-instagram__content .instagram-gallery-list {
+	grid-gap: 1.25rem;
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.p-instagram__content #instagram-gallery-feed-0 .instagram-gallery-item {
+	border-radius: 0.375rem;
+	padding: 0;
+	padding: initial;
+	width: 100%;
+}
+
+.p-instagram__content .instagram-gallery__actions {
+	margin: 1.875rem 0 0;
+}
+
+.p-instagram__content .instagram-gallery__button {
+	align-items: center;
+	background-color: #79c9bc;
+	border-radius: 0;
+	display: inline-flex;
+	font-family: "Noto Serif JP", serif;
+	font-size: 1rem;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1;
+	max-width: 19.6875rem;
+	padding: 1.0625rem 1.1875rem 1.0625rem 0;
+	position: relative;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+.p-instagram__content .instagram-gallery__button:before {
+	background-image: url(../images/common/icon-blank.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 0.625rem;
+	position: absolute;
+	right: 34%;
+	width: 0.625rem;
+}
+
+.p-instagram__content .qligg-icon-instagram {
+	display: none;
 }
 
 .p-list__item:not(:first-child) {
@@ -2097,8 +2117,7 @@ button:hover {
 	opacity: 0.8;
 }
 
-.c-button:hover,
-.c-button--blank:hover {
+.c-button:hover {
 	background-color: #333;
 }
 
@@ -2112,6 +2131,51 @@ button:hover {
 
 .p-header__nav-link span:hover::after {
 	transform: scale(1);
+}
+
+.instagram-gallery__button:hover {
+	background-color: #333;
+	opacity: 1;
+}
+
+.instagram-gallery-modal {
+	width: 73.27vw;
+}
+
+.instagram-gallery-modal__media-container {
+	width: 100%;
+}
+
+.instagram-gallery-modal__media-sidebar {
+	display: none;
+}
+
+.qligg-icon-prev::before {
+	background-image: url(../images/common/modal-prev.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 1.5625rem;
+	left: 5%;
+	position: absolute;
+	top: 52%;
+	transform: translateY(-50%);
+	width: 1.5625rem;
+}
+
+.qligg-icon-next::before {
+	background-image: url(../images/common/modal-next.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 1.5625rem;
+	position: absolute;
+	right: 5%;
+	top: 52%;
+	transform: translateY(-50%);
+	width: 1.5625rem;
 }
 
 .p-works-article__img:hover img {
@@ -2138,8 +2202,7 @@ a[href^="tel:"] {
 	pointer-events: none;
 }
 
-.c-button,
-.c-button--blank {
+.c-button {
 	font-size: 0.875rem;
 	letter-spacing: 0.1em;
 	max-width: 11.25rem;
@@ -2676,8 +2739,23 @@ a[href^="tel:"] {
 	margin-top: 3rem;
 }
 
-.p-instagram__button {
-	margin-top: 1.25rem;
+.p-instagram__content .instagram-gallery-list {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.p-instagram__content .instagram-gallery__actions {
+	margin: 1.25rem 0 0;
+}
+
+.p-instagram__content .instagram-gallery__button {
+	font-size: 0.875rem;
+	letter-spacing: 0.1em;
+	max-width: 11.25rem;
+	padding: 0.9375rem 1.1875rem 0.9375rem 0;
+}
+
+.p-instagram__content .instagram-gallery__button:before {
+	right: 21%;
 }
 
 .p-list__item {

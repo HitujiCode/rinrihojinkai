@@ -344,13 +344,6 @@
     </div>
   </section>
 
-  <?php
-  // instaの情報を配列に格納 後でプラグインで実装
-  $instaItem = [
-    [
-      'img' => 'assets/images/top/instagram@2x.webp',
-    ],
-  ] ?>
   <section class="p-instagram l-common">
     <div class="p-instagram__inner l-inner">
       <div class="p-instagram__title">
@@ -360,18 +353,7 @@
           </h2>
         </div>
         <div class="p-instagram__content">
-          <ul class="p-grid-list">
-            <?php for ($i = 0; $i < 10; $i++) : ?>
-              <li class="p-grid-list__item p-grid-item">
-                <div class="p-grid-item__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri($instaItem[0]['img'])); ?>" alt="インスタグラムの投稿" width="176" height="176" loading="lazy" />
-                </div>
-              </li>
-            <?php endfor; ?>
-          </ul>
-          <div class="p-instagram__button">
-            <a class="c-button--blank" href="#"><span>Instagram</span></a>
-          </div>
+          <?php echo do_shortcode('[insta-gallery id="0"]') ?>
         </div>
       </div>
     </div>

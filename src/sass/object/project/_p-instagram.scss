@@ -5,12 +5,115 @@
   @include mq("md") {
     margin-top: rem(48);
   }
+
+  .instagram-gallery-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+    @include mq("md") {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  #instagram-gallery-feed-0 .instagram-gallery-item {
+    padding: initial;
+    width: 100%;
+    border-radius: rem(6);
+  }
+
+  .instagram-gallery__actions {
+    margin: rem(30) 0 0;
+    @include mq("md") {
+      margin: rem(20) 0 0;
+    }
+  }
+
+  .instagram-gallery__button {
+    background-color: $base;
+    border-radius: 0;
+    width: 100%;
+    max-width: rem(315);
+    padding: rem(17) rem(19) rem(17) 0;
+    font-size: rem(16);
+    font-weight: $semi-bold;
+    font-family: $base-font;
+    line-height: 1;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    @include mq("md") {
+      font-size: rem(14);
+      letter-spacing: 0.1em;
+      padding: rem(15) rem(19) rem(15) 0;
+      max-width: rem(180);
+    }
+  }
+
+  .instagram-gallery__button:before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/common/icon-blank.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: rem(10);
+    height: rem(10);
+    right: 34%;
+    @include mq("md") {
+      right: 21%;
+    }
+  }
+
+  .qligg-icon-instagram {
+    display: none;
+  }
 }
 
-.p-instagram__button {
-  margin-top: rem(50);
-  text-align: center;
-  @include mq("md") {
-    margin-top: rem(20);
+@media (hover: hover) {
+  .instagram-gallery__button:hover {
+    background-color: $black;
+    opacity: 1;
+  }
+
+  .instagram-gallery-modal {
+    width: 73.27vw;
+  }
+
+  .instagram-gallery-modal__media-container {
+    width: 100%;
+  }
+
+  .instagram-gallery-modal__media-sidebar {
+    display: none;
+  }
+
+  .qligg-icon-prev::before {
+    content: "";
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    transform: translateY(-50%);
+    background-image: url(../images/common/modal-prev.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: rem(25);
+    height: rem(25);
+  }
+
+  .qligg-icon-next::before {
+    content: "";
+    position: absolute;
+    top: 52%;
+    right: 5%;
+    transform: translateY(-50%);
+    background-image: url(../images/common/modal-next.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: rem(25);
+    height: rem(25);
   }
 }

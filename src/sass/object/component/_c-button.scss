@@ -26,28 +26,3 @@
     background-color: $black;
   }
 }
-
-.c-button--blank {
-  @extend .c-button;
-  text-transform: initial;
-}
-
-.c-button--blank span {
-  padding-right: rem(19);
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.c-button--blank span::before {
-  content: "";
-  position: absolute;
-  display: block;
-  right: 0;
-  width: rem(10);
-  height: rem(10);
-  background-image: url(../images/common/icon-blank.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
