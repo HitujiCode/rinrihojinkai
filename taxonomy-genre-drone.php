@@ -58,7 +58,7 @@
       </div>
 
       <div class="p-archive-works__button">
-        <a href="<?php echo esc_url(get_post_type_archive_link('/')); ?>" class="c-button">top</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="c-button">top</a>
       </div>
     </div>
   </div>
