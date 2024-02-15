@@ -2032,6 +2032,10 @@ select::-ms-expand {
 	text-decoration: underline;
 }
 
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
 .u-notel {
 	pointer-events: none;
 }

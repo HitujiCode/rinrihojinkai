@@ -58,8 +58,9 @@
       </div>
       <div class="p-footer__text-wrap">
         <p class="p-footer__text">
-          This site is protected by reCAPTCHA and the Google<br class="u-mobile"> Privacy Policy and Terms of Service
-          apply.
+          This site is protected by reCAPTCHA and the Google <br class="u-mobile">
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+          <a href="https://policies.google.com/terms">Terms of Service</a> apply.
         </p>
         <div class="p-footer__copyright">
           <small>
