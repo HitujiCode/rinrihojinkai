@@ -6,8 +6,8 @@
     <div class="p-footer__inner l-inner">
       <div class="p-footer__wrap">
         <div class="p-footer__logo">
-          <a href="#">
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/icon-logo.svg')); ?>" alt="Logo" width="80" height="74" />
+          <a href="<?php echo esc_url(home_url()); ?>">
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/icon-logo.svg')); ?>" alt="Fioritura" width="80" height="74" />
           </a>
         </div>
         <div class="p-footer__info">
@@ -41,15 +41,16 @@
           </ul>
           <ul class="p-global-nav__icons p-sns-icons--white">
             <li class="p-sns-icons__item">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/fioritura_rara" target="_blank" rel="noopener noreferrer">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/instagram.svg')); ?>" alt="Instagram" width="16" height="16" /></a>
             </li>
             <li class="p-sns-icons__item">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/youxiangEucaly" target="_blank" rel="noopener noreferrer">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/x.svg')); ?>" alt="X" width="16" height="16" /></a>
             </li>
             <li class="p-sns-icons__item">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=100073566681190
+" target="_blank" rel="noopener noreferrer">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/facebook.svg')); ?>" alt="Facebook" width="16" height="16" /></a>
             </li>
           </ul>
