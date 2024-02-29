@@ -1,0 +1,156 @@
+@use "global" as *;
+
+.intro {
+}
+
+.intro::before {
+  content: "rinri hojinkai\aniigata";
+  white-space: pre;
+  position: absolute;
+  top: rem(50);
+  left: calc(50 / 1440 * 100vw);
+  text-transform: uppercase;
+  font-size: rem(80);
+  font-weight: $medium;
+  font-family: $en-font;
+  color: $white;
+  line-height: calc(100 / 80);
+  letter-spacing: 0.1em;
+  @include mq("md") {
+    top: rem(24);
+    left: calc(4 / 375 * 100vw);
+    font-size: calc(36 / 375 * 100vw);
+  }
+}
+
+.intro__inner.inner {
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.intro__container {
+  display: flex;
+  gap: min((130 / 1232 * 100vw), rem(130));
+  @include mq("md") {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.intro__img {
+  z-index: 1;
+  width: calc(598 / 1232 * 100%);
+  @include mq("md") {
+    width: 100%;
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+.intro__img img {
+  aspect-ratio: 598/717;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 598/550;
+    object-position: top;
+  }
+}
+
+.intro__body {
+  flex: 1;
+  padding-top: rem(94);
+  @include mq("md") {
+    padding-top: rem(40);
+  }
+}
+
+.intro__title {
+}
+
+.intro__text-wrap {
+  margin-top: rem(78);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.intro__head {
+}
+
+.intro__text {
+  margin-top: rem(20);
+  text-align: justify;
+}
+
+.intro__button {
+  margin-top: rem(50);
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.intro--delta,
+.intro--reverse {
+  @extend .intro;
+}
+
+.intro--delta::before,
+.intro--reverse::before {
+  content: none;
+}
+
+.intro--delta .intro__text {
+  margin-top: rem(42);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.intro--reverse .intro__container {
+  flex-direction: row-reverse;
+  gap: min((146 / 1232 * 100vw), rem(146));
+  @include mq("md") {
+    flex-direction: column;
+    gap: rem(40);
+  }
+}
+
+.intro--reverse .intro__body {
+  padding-top: initial;
+}
+
+.intro--reverse .intro__img {
+  width: calc(596 / 1232 * 100%);
+  @include mq("md") {
+    width: 100%;
+    // margin-right: calc(50% - 50vw);
+  }
+}
+
+.intro--reverse .intro__img img {
+  aspect-ratio: 596/466;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  @include mq("md") {
+    // aspect-ratio: 598/550;
+    // object-position: top;
+  }
+}
+
+.intro--reverse .intro__text {
+  margin-top: rem(45);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.intro--reverse .intro__button {
+  margin-top: rem(56);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

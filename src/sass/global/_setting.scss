@@ -4,28 +4,21 @@
 // インナー幅設定
 ////////////////////
 // コンテンツのインナー幅（最も共通の幅が多い部分）
-$inner: 960px;
+$inner: 1232px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
 $padding-pc: 25px;
-$padding-sp: 30px;
+$padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 ////////////////////
 // フォント設定
 ////////////////////
 
-@font-face {
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Lora";
-  src: url("../fonts/Lora-Regular.woff") format("woff");
-}
-
-$base-font: "Noto Serif JP", serif;
-$en-font: "Lora", serif;
+$mincho-font: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+$gothic-font: "Noto Sans JP", sans-serif;
+$en-font: "EB Garamond", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 // フォントウェイト
@@ -39,24 +32,41 @@ $bold: 700;
 ////////////////////
 
 //色指定（共通性のあるものは出来る限り指定すると良い）
-$black: #333;
+$black: #000;
 $white: #fff;
-$darkgray: #5d5d5d;
-$base: #79c9bc;
-$blue: #391e88;
-$bg-black: #120e19;
-$beige: #f5f4f1;
-$contact: #ebe9e3;
+$font: #291000;
+$darkbrown: #261102;
+$base: #cbb94f;
+$base2: #cbb84f;
+$ocher: #91801b;
+$ivory: #f7f6f0;
+$yellow: #e5e0c6;
+$red: #c38b79;
+$blue: #8390ab;
+$green: #7ca39d;
+$sagegreen: #82a37c;
+$pink: #c37990;
+$purple: #9183ab;
+$lightgray: #eaeaeb;
+$bg-light: #f8f8f8;
+$bg-lightblue: #f7f9fa;
+$bg-beige: #f0eee1;
+$date-blue: #5a8ae5;
+$date-darkblue: #6687aa;
+$date-yellow: #fec248;
+$date-purple: #785fb0;
+$date-violet: #b30b73;
+$date-limegreen: #a4d60a;
 
 body {
-  font-family: $base-font;
-  color: $darkgray;
-  position: relative;
+  font-family: $mincho-font;
+  font-optical-sizing: auto;
+  color: $font;
 }
 
 body.is-fixed {
   position: fixed;
-  width: 100%;
   top: 0;
-  overflow: hidden;
+  left: 0;
+  right: 0;
 }

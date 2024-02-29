@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.layout-sub-intro {
+  padding-top: rem(90);
+  position: relative;
+  @include mq("md") {
+    padding-top: rem(60);
+  }
+}
+
+.layout-sub-intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(838 / 1400 * 100vw);
+  background-image: linear-gradient(to bottom, $ivory 64.53%, $white);
+  z-index: -1;
+}

@@ -1,0 +1,226 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: rem(130);
+  max-width: 100vw;
+  background-color: $white;
+  z-index: 100;
+  @include mq("md") {
+    height: rem(70);
+  }
+}
+
+.header__inner {
+  padding-left: min((100/1440 * 100vw), rem(100));
+  height: inherit;
+  display: flex;
+  align-items: center;
+  @include mq("lg") {
+    padding-left: rem(50);
+  }
+  @include mq("md") {
+    padding-left: rem(20);
+    width: 100%;
+  }
+}
+
+.header__logo {
+  display: flex;
+  height: inherit;
+}
+
+.header__nav {
+  display: block;
+  height: inherit;
+  margin-left: auto;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.header__nav-items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__nav-item {
+  height: inherit;
+}
+
+.header__nav-item a {
+  padding: 0 min((24/1440 * 100vw), rem(24));
+  height: inherit;
+  display: flex;
+  align-items: center;
+  font-size: clamp(10px, (16/1440 * 100vw), rem(24));
+  font-weight: $regular;
+  color: $black;
+  line-height: 1;
+}
+
+.header__nav-item span {
+  position: relative;
+  padding-right: min((27/1440 * 100vw), rem(27));
+}
+
+.header__nav-item span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: $base;
+  transition: width 0.3s ease;
+}
+
+.header__nav-item span::after {
+  position: absolute;
+  content: "";
+  width: rem(15);
+  height: rem(15);
+  top: rem(-3);
+  right: 0;
+  background-image: url(./../images/common/icon-down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.header__nav-item.header__nav-item--noicon span {
+  padding-right: initial;
+}
+
+.header__nav-item.header__nav-item--noicon span::after {
+  content: none;
+}
+
+.header__nav-item.header__nav-item--contact {
+  margin-left: min((56/1440 * 100vw), rem(56));
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-item.header__nav-item--contact a {
+  padding: 0 min((59/1440 * 100vw), rem(59));
+  position: relative;
+  color: $white;
+  background-color: $base;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: rem(16);
+}
+
+.header__nav-item.header__nav-item--contact a::before {
+  content: "";
+  width: rem(42);
+  height: rem(31);
+  display: inline-block;
+  background-image: url(../images/common/icon-contact.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+.header__hamburger {
+  margin-left: auto;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+  width: rem(40);
+  height: inherit;
+  background-color: $base;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.header__hamburger.is-open {
+  background-color: transparent;
+}
+
+.header__hamburger span {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: rem(15);
+  height: 1px;
+  background-color: $white;
+  transition: 0.5s;
+}
+
+.header__hamburger span:nth-of-type(1) {
+  top: rem(-4);
+}
+
+.header__hamburger span:nth-of-type(2) {
+  top: 0;
+}
+
+.header__hamburger span:nth-of-type(3) {
+  top: rem(4);
+}
+
+.header__hamburger.is-open span:nth-of-type(1) {
+  top: 0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.header__hamburger.is-open span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header__hamburger.is-open span:nth-of-type(3) {
+  top: rem(-2);
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.header__drawer {
+  padding: rem(200) 0;
+  position: absolute;
+  z-index: 900;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100dvh;
+  background-color: $base;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  transition: left 0.3s ease;
+}
+
+.header__drawer.is-open {
+  left: 0;
+}
+
+.header__drawer::-webkit-scrollbar {
+  display: none;
+}
+
+.header__drawer-item a {
+  padding: rem(15) 0;
+  display: block;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: $white;
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .header__nav-item:hover span::before {
+    width: 100%;
+  }
+}

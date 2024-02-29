@@ -1,0 +1,121 @@
+@use "global" as *;
+
+.button {
+  padding: rem(22) rem(20);
+  width: 100%;
+  max-width: rem(278);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $base;
+  color: $white;
+  transition: color 0.3s ease;
+}
+
+.button__icon {
+  width: rem(25);
+  height: rem(13);
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.button--red .button__icon,
+.button--blue .button__icon,
+.button--green .button__icon,
+.button--white .button__icon,
+.button--ocher .button__icon {
+  filter: unset;
+}
+
+.button--red {
+  @extend .button;
+  background-color: $white;
+  color: $red;
+}
+
+.button--blue {
+  @extend .button;
+  background-color: $white;
+  color: $blue;
+}
+
+.button--blue svg *[stroke] {
+  stroke: $blue;
+}
+
+.button--blue ellipse {
+  fill: $blue;
+}
+
+.button--green {
+  @extend .button;
+  background-color: $white;
+  color: $green;
+}
+
+.button--green svg *[stroke] {
+  stroke: $green;
+}
+
+.button--green ellipse {
+  fill: $green;
+}
+
+.button--white {
+  @extend .button;
+  background-color: $white;
+  color: $ocher;
+}
+
+.button--white svg *[stroke] {
+  stroke: $base;
+}
+
+.button--white ellipse {
+  fill: $base;
+}
+
+.button--ocher {
+  @extend .button;
+  background-color: $ocher;
+  color: $white;
+}
+
+.button--ocher svg *[stroke] {
+  stroke: $white;
+}
+
+.button--ocher ellipse {
+  fill: $white;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    opacity: 1;
+    color: rgba($white, 0.6);
+  }
+
+  .button--red:hover {
+    color: rgba($red, 0.6);
+  }
+
+  .button--blue:hover {
+    color: rgba($blue, 0.6);
+  }
+
+  .button--green:hover {
+    color: rgba($green, 0.6);
+  }
+
+  .button--white:hover {
+    color: rgba($base, 0.6);
+  }
+
+  .button:hover .button__icon {
+    transform: translateX(rem(10));
+  }
+}

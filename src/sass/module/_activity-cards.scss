@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.activity-cards {
+  display: grid;
+  gap: rem(40);
+  grid-template-columns: repeat(3, 1fr);
+  counter-reset: number;
+  @include mq(md) {
+    row-gap: rem(30);
+    column-gap: rem(24);
+    grid-template-columns: 1fr;
+  }
+}
+
+.activity-cards--column2 {
+  @extend .activity-cards;
+  grid-template-columns: repeat(2, 1fr);
+}

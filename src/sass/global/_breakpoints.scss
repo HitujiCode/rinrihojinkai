@@ -1,5 +1,5 @@
 // どっちファーストの設定（"sp" or "pc"）
-$startFrom: sp;
+$startFrom: pc;
 
 // デフォルト値を設定
 $mediaquerys: (
@@ -30,7 +30,7 @@ $mediaquerys: (
     xl: 1440,
     lg: 1023,
     md: 767,
-    sm: 600
+    sm: 500
   );
   $mediaquerys: (
     sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
@@ -77,12 +77,5 @@ $mediaquerys: (
     @include mq("md") {
       display: block;
     }
-  }
-}
-
-.u-tab {
-  display: block;
-  @include mq("lg") {
-    display: none;
   }
 }

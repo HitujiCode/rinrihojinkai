@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-sub-activity {
+  margin-top: rem(120);
+  padding: rem(116) 0 rem(120);
+  background-color: $ivory;
+  @include mq("md") {
+    margin-top: rem(80);
+    padding: rem(60) 0 rem(80);
+  }
+}

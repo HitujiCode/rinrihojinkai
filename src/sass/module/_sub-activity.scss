@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.sub-activity {
+}
+
+.sub-activity__inner.inner {
+}
+
+.sub-activity__container {
+}
+
+.sub-activity__head-wrap {
+  text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.sub-activity__text {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.sub-activity__list {
+  margin-top: rem(84);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.sub-activity__faq {
+  margin-top: rem(120);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.sub-activity__faq-inner.inner--small {
+  @include mq("md") {
+    padding: initial;
+  }
+}
+
+.sub-activity__faq-block {
+}
+
+.faq-block {
+}
+
+.faq-block__question {
+}
+
+.faq {
+}
+
+.faq__img {
+}
+
+.faq__head {
+}
+
+.title-small {
+}
+
+.faq-block__answer {
+}
+
+.faq--ivory {
+}

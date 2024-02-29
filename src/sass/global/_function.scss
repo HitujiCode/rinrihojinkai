@@ -17,7 +17,3 @@
 @function rem($pixels) {
   @return math.div($pixels, 16) * 1rem;
 }
-
-@function rem2($pixels) {
-  @return math.div($pixels, 32) * 1rem;
-}

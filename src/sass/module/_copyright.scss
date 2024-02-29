@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.copyright small {
+  font-size: max(10px, rem(12));
+  font-weight: $regular;
+  font-family: $en-font;
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: rem(10);
+  }
+}

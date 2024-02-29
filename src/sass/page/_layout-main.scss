@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.layout-main {
+  padding-top: rem(130);
+  @include mq("md") {
+    padding-top: rem(70);
+  }
+}

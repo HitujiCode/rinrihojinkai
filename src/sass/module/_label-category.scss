@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.label-category {
+  font-family: $gothic-font;
+  background-color: $black;
+  color: $white;
+  padding: rem(3) rem(7) rem(5);
+  width: fit-content;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  border: 1px solid $black;
+}
+
+.label-category--white {
+  @extend .label-category;
+  background-color: $white;
+  color: $black;
+  padding: rem(3) rem(7) rem(5);
+  border: 1px solid $lightgray;
+}

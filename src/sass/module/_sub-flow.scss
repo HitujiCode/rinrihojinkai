@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.sub-flow {
+}
+
+.sub-flow__inner.inner {
+}
+
+.sub-flow__container {
+}
+
+.sub-flow__head {
+  text-align: center;
+}
+
+.sub-flow__list {
+  margin-top: rem(60);
+  @include mq("md") {
+    margin-top: rem(50);
+  }
+}

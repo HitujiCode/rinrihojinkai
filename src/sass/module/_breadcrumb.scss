@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.breadcrumb {
+  display: flex;
+  justify-content: end;
+  gap: rem(14);
+  font-size: rem(14);
+  font-family: $gothic-font;
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: 12px;
+    gap: rem(12);
+    top: calc(30 / 1400 * 100vw);
+    left: calc(20 / 1400 * 100%);
+  }
+}
+
+// .breadcrumb span > a {
+//   position: relative;
+//   text-decoration: underline;
+// }

@@ -1,0 +1,106 @@
+@use "global" as *;
+
+.guide__items {
+  display: flex;
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.guide__item {
+  border-top: 1px solid $lightgray;
+  flex: 1;
+  background-image: url(../images/top/hover-bg@2x.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.guide__item:nth-child(even) {
+  border-left: 1px solid $lightgray;
+}
+
+.guide__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  transition: background-color 0.3s ease;
+}
+
+.guide__item-link {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: rem(85);
+  padding-bottom: rem(94);
+  @include mq("md") {
+    padding-top: rem(32);
+    padding-bottom: rem(32);
+  }
+}
+
+.guide__item:nth-child(odd) .guide__item-link {
+  padding-left: calc(70 / 720 * 100%);
+  padding-right: calc(75 / 720 * 100%);
+  @include mq("md") {
+    padding-left: calc(20 / 375 * 100%);
+    padding-right: calc(20 / 375 * 100%);
+  }
+}
+
+.guide__item:nth-child(even) .guide__item-link {
+  padding-left: calc(75 / 720 * 100%);
+  padding-right: calc(71 / 720 * 100%);
+  @include mq("md") {
+    padding-left: calc(20 / 375 * 100%);
+    padding-right: calc(20 / 375 * 100%);
+  }
+}
+
+.guide__item-icon {
+  width: rem(43);
+  height: auto;
+  transition: transform 0.3s ease;
+  @include mq("md") {
+    width: rem(30);
+  }
+}
+
+.guide__item-icon svg *[stroke] {
+  stroke: $darkbrown;
+  transition: stroke 0.3s ease;
+}
+
+.guide__item-icon ellipse {
+  fill: $ivory;
+  opacity: 1;
+  transition: fill 0.3s ease;
+}
+
+@media (hover: hover) {
+  .guide__item:hover::before {
+    background-color: rgba($black, 0.5);
+  }
+
+  .guide__item:hover .section-head__ja {
+    color: $white;
+  }
+
+  .guide__item:hover .guide__item-icon {
+    transform: translateX(rem(10));
+  }
+
+  .guide__item:hover .guide__item-icon svg *[stroke] {
+    stroke: $white;
+  }
+
+  .guide__item:hover .guide__item-icon ellipse {
+    fill: rgba($white, 0.5);
+  }
+}

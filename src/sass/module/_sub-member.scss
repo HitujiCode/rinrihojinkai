@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.sub-member {
+}
+
+.sub-member__intro {
+}
+
+.sub-member__faq {
+  margin-top: rem(120);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.sub-member__faq-inner {
+}
+
+.inner--small {
+}
+
+.sub-member__faq-block {
+}
+
+.faq-block {
+}

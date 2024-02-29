@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(40);
+  @include mq("md") {
+    grid-template-columns: 1fr;
+    gap: rem(30);
+  }
+}

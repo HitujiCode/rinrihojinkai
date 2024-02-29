@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-sub-flow {
+  margin-top: rem(120);
+  padding: rem(116) 0 rem(46);
+  background-image: linear-gradient(to bottom, $ivory 64.53%, $white);
+  @include mq("md") {
+    margin-top: rem(80);
+    padding: rem(60) 0;
+  }
+}

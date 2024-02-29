@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.sub-intro {
+}
+
+.sub-intro__inner.inner {
+}
+
+.sub-intro__container {
+}
+
+.sub-intro__intro {
+  margin-top: rem(120);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.sub-intro__faq {
+  margin-top: rem(126);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

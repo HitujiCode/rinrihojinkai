@@ -1,0 +1,95 @@
+@use "global" as *;
+
+.member {
+  overflow-x: hidden;
+}
+
+.member__head {
+  text-align: center;
+}
+
+.member__text {
+  margin-top: rem(56);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+.member__list {
+  position: relative;
+  margin-top: rem(84);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.member__button {
+  margin-top: rem(60);
+  display: flex;
+  justify-content: center;
+  @include mq("md") {
+    margin-top: rem(50);
+  }
+}
+
+.member__swiper {
+  overflow: visible;
+}
+
+.member__swiper .swiper-slide {
+  width: rem(278);
+}
+
+.member__swiper-ui {
+  margin-top: rem(34);
+  display: flex;
+  align-items: center;
+}
+
+.member__swiper-ui .swiper-scrollbar {
+  position: initial;
+  margin-left: auto;
+  height: 1px;
+  width: calc(1060 / 1232 * 100%);
+  background-color: rgba($base, 0.3);
+  @include mq("md") {
+    width: calc(230 / 335 * 100%);
+  }
+}
+
+.member__swiper-ui .swiper-scrollbar-drag {
+  background-color: $base;
+}
+
+.member__swiper-ui .swiper-button-prev,
+.member__swiper-ui .swiper-button-next {
+  position: initial;
+  margin-top: initial;
+  width: rem(40);
+  height: rem(40);
+  @include mq("md") {
+    width: rem(32);
+    height: rem(32);
+  }
+}
+
+.member__swiper-ui .swiper-button-prev img,
+.member__swiper-ui .swiper-button-next img {
+  aspect-ratio: 40/40;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.member__swiper-ui .swiper-button-prev::after,
+.member__swiper-ui .swiper-button-next::after {
+  content: initial;
+}
+
+.member__swiper-ui .swiper-button-next {
+  margin-left: rem(24);
+  @include mq("md") {
+    margin-left: rem(16);
+  }
+}

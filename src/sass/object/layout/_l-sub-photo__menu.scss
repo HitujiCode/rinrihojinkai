@@ -1,8 +1,0 @@
-@use "global" as *;
-
-.l-sub-photo__menu {
-  margin-top: rem(50);
-  @include mq("md") {
-    margin-top: rem(60);
-  }
-}

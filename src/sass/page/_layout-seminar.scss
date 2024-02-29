@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-seminar {
+  margin-top: rem(120);
+  padding-top: rem(120);
+  border-top: 1px solid $lightgray;
+  @include mq("md") {
+    margin-top: rem(80);
+    padding-top: rem(60);
+  }
+}

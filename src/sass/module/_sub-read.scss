@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.sub-read {
+  text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.sub-read__text {
+  margin-bottom: rem(-8);
+}

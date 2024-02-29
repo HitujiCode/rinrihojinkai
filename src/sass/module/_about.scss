@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.about__container {
+  margin-top: rem(56);
+  display: flex;
+  gap: min((146/1232 * 100vw), rem(146));
+  @include mq("md") {
+    flex-direction: column;
+    margin-top: rem(40);
+    gap: rem(40);
+  }
+}
+
+.about__text {
+  width: calc(384 / 1232 * 100%);
+  text-align: justify;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.about__body {
+  flex: 1;
+}
+
+.about__schedule {
+  margin-top: rem(90);
+  padding: rem(72) rem(66);
+  background-color: $white;
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(60);
+    padding: rem(40) rem(12);
+  }
+}
+
+.about__schedule-body {
+  margin-top: rem(56);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

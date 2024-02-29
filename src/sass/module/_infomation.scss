@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.infomation__container {
+  display: flex;
+  gap: rem(52);
+  @include mq("md") {
+    flex-direction: column;
+    gap: rem(40);
+  }
+}
+
+.infomation__aside {
+  width: calc(265 / 1232 * 100%);
+  border-right: 1px solid $lightgray;
+  padding-right: calc(52 / 1232 * 100%);
+  @include mq("md") {
+    display: contents;
+  }
+}
+
+.infomation__tab-menu {
+  margin-top: rem(56);
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: rem(10);
+  row-gap: rem(13);
+  @include mq("md") {
+    margin-top: initial;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.infomation__tab-menu-item {
+  cursor: pointer;
+}
+
+.infomation__tab-menu-item.is-active {
+  background-color: $black;
+  color: $white;
+  border: 1px solid $black;
+}
+
+.infomation__button {
+  margin-top: rem(60);
+  @include mq("md") {
+    margin-top: rem(10);
+    order: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.infomation__tab-content-wrap {
+  flex: 1;
+}
+
+.infomation__tab-content {
+  display: none;
+}
+
+.infomation__tab-content.is-active {
+  display: grid;
+  animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

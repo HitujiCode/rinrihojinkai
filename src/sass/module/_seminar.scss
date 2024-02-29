@@ -1,0 +1,90 @@
+@use "global" as *;
+
+.seminar {
+  overflow-x: hidden;
+}
+
+.seminar__container {
+  position: relative;
+}
+
+.seminar__list {
+  margin-top: rem(56);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.seminar__button {
+  margin-top: rem(60);
+  display: flex;
+  justify-content: center;
+  @include mq("md") {
+    margin-top: rem(50);
+  }
+}
+
+.seminar__swiper {
+  overflow: visible;
+}
+
+.seminar__swiper .swiper-slide {
+  width: rem(596);
+  height: auto;
+  @include mq("md") {
+    width: rem(335);
+  }
+}
+
+.seminar__swiper-ui {
+  margin-top: rem(34);
+  display: flex;
+  align-items: center;
+}
+
+.seminar__swiper-ui .swiper-scrollbar {
+  position: initial;
+  margin-left: auto;
+  height: 1px;
+  width: calc(1060 / 1232 * 100%);
+  background-color: rgba($base, 0.3);
+  @include mq("md") {
+    width: calc(230 / 335 * 100%);
+  }
+}
+
+.seminar__swiper-ui .swiper-scrollbar-drag {
+  background-color: $base;
+}
+
+.seminar__swiper-ui .swiper-button-prev,
+.seminar__swiper-ui .swiper-button-next {
+  position: initial;
+  margin-top: initial;
+  width: rem(40);
+  height: rem(40);
+  @include mq("md") {
+    width: rem(32);
+    height: rem(32);
+  }
+}
+
+.seminar__swiper-ui .swiper-button-prev img,
+.seminar__swiper-ui .swiper-button-next img {
+  aspect-ratio: 40/40;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.seminar__swiper-ui .swiper-button-prev::after,
+.seminar__swiper-ui .swiper-button-next::after {
+  content: initial;
+}
+
+.seminar__swiper-ui .swiper-button-next {
+  margin-left: rem(24);
+  @include mq("md") {
+    margin-left: rem(16);
+  }
+}

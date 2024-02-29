@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.title {
+  font-size: rem(48);
+  font-weight: $regular;
+  line-height: calc(68 / 48);
+  @include mq("md") {
+    font-size: rem(30);
+  }
+}
+
+.title--medium {
+  @extend .title;
+  font-size: rem(32);
+  line-height: calc(40 / 32);
+  @include mq("md") {
+    font-size: rem(24);
+    line-height: 1.5;
+  }
+}

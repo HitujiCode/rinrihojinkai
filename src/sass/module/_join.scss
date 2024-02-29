@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.join {
+  position: relative;
+}
+
+.join::before,
+.join::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.join::before {
+  background-image: url("../images/top/join1@2x.svg");
+  left: calc(50vw - rem(620));
+  width: rem(376);
+  height: rem(217);
+  @include mq("md") {
+    left: rem(10);
+    width: rem(188);
+    height: rem(108);
+  }
+}
+
+.join::after {
+  background-image: url("../images/top/join2@2x.svg");
+  right: calc(50vw - rem(612));
+  width: rem(291);
+  height: rem(203);
+  @include mq("md") {
+    right: rem(10);
+    width: rem(145);
+    height: rem(101);
+  }
+  @include mq("sm") {
+    content: none;
+  }
+}
+
+.join__container {
+  text-align: center;
+}
+
+.join__head {
+}
+
+.join__text {
+  margin-top: rem(56);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.join__button {
+  margin-top: rem(60);
+  display: flex;
+  justify-content: center;
+  @include mq("md") {
+    margin-top: rem(50);
+  }
+}

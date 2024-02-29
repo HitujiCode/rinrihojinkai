@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.section-head {
+  font-weight: $medium;
+  line-height: 1;
+}
+
+.section-head__en {
+  font-size: rem(48);
+  font-weight: $regular;
+  font-family: $en-font;
+  color: $base2;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: rem(36);
+  }
+}
+
+.section-head__ja {
+  margin-top: rem(32);
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1;
+  transition: color 0.3s ease;
+  @include mq("md") {
+    margin-top: rem(12);
+    font-size: rem(15);
+  }
+}
+
+.section-head--small,
+.section-head--white,
+.section-head--delta {
+  @extend .section-head;
+}
+
+.section-head--small .section-head__en {
+  font-size: rem(24);
+  @include mq("md") {
+    font-size: rem(36);
+  }
+}
+
+.section-head--small .section-head__ja {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(12);
+  }
+}
+
+.section-head--white .section-head__ja {
+  color: $white;
+}
+
+.section-head--delta .section-head__en {
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.section-head--delta .section-head__ja {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(12);
+  }
+}

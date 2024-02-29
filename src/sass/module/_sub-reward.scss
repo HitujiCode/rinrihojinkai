@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.sub-reward {
+}
+
+.sub-reward__inner {
+}
+
+.inner {
+}
+
+.sub-reward__container {
+}
+
+.sub-reward__head {
+  text-align: center;
+}
+
+.sub-reward__list {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

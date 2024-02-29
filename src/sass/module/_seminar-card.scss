@@ -1,0 +1,109 @@
+@use "global" as *;
+
+.seminar-card {
+  display: flex;
+  background-color: $ivory;
+  color: $black;
+}
+
+.seminar-card__link {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.seminar-card__head {
+  display: flex;
+  border-bottom: 1px solid $yellow;
+}
+
+.seminar-card__title-wrap {
+  padding: rem(32) rem(48);
+  flex: 1;
+  @include mq("md") {
+    padding: rem(20) rem(20);
+  }
+}
+
+.seminar-card__title {
+  line-height: 1;
+}
+
+.seminar-card__title-number {
+  display: inline-block;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1;
+  padding-bottom: rem(5);
+  border-bottom: 1px solid $black;
+  @include mq("md") {
+    font-size: rem(12);
+    padding-bottom: rem(2);
+  }
+}
+
+.seminar-card__title-text {
+  margin-top: rem(28);
+  display: block;
+  font-size: rem(18);
+  font-weight: $regular;
+  line-height: 1.3;
+  @include mq("md") {
+    margin-top: rem(16);
+    font-size: rem(16);
+  }
+}
+
+.seminar-card__img {
+  width: calc(278 / 596 * 100%);
+}
+
+.seminar-card__img img {
+  aspect-ratio: 278/196;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seminar-card__info {
+  padding: rem(20) rem(23) rem(23) rem(48);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  @include mq("md") {
+    padding: rem(20);
+  }
+}
+
+.seminar-card__info-wrap {
+  display: flex;
+  gap: rem(10);
+  font-size: rem(16);
+  font-family: $gothic-font;
+  color: $black;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: rem(14);
+  }
+}
+
+.seminar-card__info-wrap:not(:first-child) {
+  margin-top: rem(10);
+}
+
+.seminar-card__info-wrap:last-child {
+  flex-grow: 1;
+}
+
+.seminar-card__info-term {
+  flex: 1;
+  font-weight: $medium;
+}
+
+.seminar-card__info-description {
+  width: calc(460 / 525 * 100%);
+  @include mq("md") {
+    width: 80%;
+  }
+}

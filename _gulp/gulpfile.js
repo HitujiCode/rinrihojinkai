@@ -19,7 +19,7 @@ const changed = require("gulp-changed"); // 変更されたファイルのみを
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
 const webp = require("gulp-webp"); //webp変換
 const rename = require("gulp-rename"); //ファイル名変更
-const themeName = "fioritura"; // WordPress theme name
+const themeName = "rinri"; // WordPress theme name
 
 // 読み込み先
 const srcPath = {

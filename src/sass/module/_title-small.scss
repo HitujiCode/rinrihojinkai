@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.title-small {
+  font-size: rem(20);
+  font-weight: $semi-bold;
+  line-height: 2;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}

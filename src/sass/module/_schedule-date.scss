@@ -1,0 +1,82 @@
+@use "global" as *;
+
+.schedule-date {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.schedule-date th,
+.schedule-date td {
+  border: 1px solid $yellow;
+  font-size: rem(18);
+  font-weight: $regular;
+  font-family: $gothic-font;
+  color: $black;
+  line-height: 1;
+  padding: rem(15) 0;
+  @include mq("md") {
+    font-size: rem(12);
+    padding: rem(12) 0;
+  }
+}
+
+.schedule-date tr:first-child th {
+  background-color: $base;
+  color: $white;
+  font-weight: $medium;
+}
+
+.schedule-date tr:nth-child(odd) {
+  background-color: $bg-light;
+}
+
+.schedule-date__blue,
+.schedule-date__darkblue,
+.schedule-date__yellow,
+.schedule-date__purple,
+.schedule-date__violet,
+.schedule-date__limegreen {
+  position: relative;
+}
+
+.schedule-date__blue::before,
+.schedule-date__darkblue::before,
+.schedule-date__yellow::before,
+.schedule-date__purple::before,
+.schedule-date__violet::before,
+.schedule-date__limegreen::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(5);
+  height: calc(100% - 2px);
+  @include mq("md") {
+    width: rem(3);
+  }
+}
+
+.schedule-date__blue::before {
+  background-color: $date-blue;
+}
+
+.schedule-date__darkblue::before {
+  background-color: $date-darkblue;
+}
+
+.schedule-date__yellow::before {
+  background-color: $date-yellow;
+}
+
+.schedule-date__purple::before {
+  background-color: $date-purple;
+}
+
+.schedule-date__violet::before {
+  background-color: $date-violet;
+}
+
+.schedule-date__limegreen::before {
+  background-color: $date-limegreen;
+}

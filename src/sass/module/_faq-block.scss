@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.faq-block {
+}
+
+.faq-block__answer {
+  margin-top: rem(24);
+}
+
+.faq-block__answer .faq__text {
+  margin-top: rem(-6);
+  margin-bottom: rem(-6);
+}

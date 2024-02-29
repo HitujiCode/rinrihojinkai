@@ -1,0 +1,100 @@
+@use "global" as *;
+
+.about-item {
+  border-bottom: 1px solid $yellow;
+  transition: background-color 0.3s ease;
+}
+
+.about-item:first-child {
+  border-top: 1px solid $yellow;
+}
+
+.about-item__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(56) rem(10) rem(56) 0;
+  position: relative;
+  transition: padding-left 0.3s ease;
+  @include mq("md") {
+    padding: rem(32) rem(10);
+  }
+}
+
+.about-item__title {
+  font-size: rem(28);
+  font-weight: $regular;
+  line-height: 1;
+  color: $black;
+  @include mq("md") {
+    font-size: rem(18);
+  }
+}
+
+.about-item__img {
+  width: rem(300);
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 16px);
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.3s ease,
+    opacity 0.3s ease;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.about-item__img img {
+  aspect-ratio: 300/212;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-item__icon {
+  width: rem(43);
+  height: rem(23);
+  transition: transform 0.3s ease;
+  @include mq("md") {
+    width: rem(25);
+    height: auto;
+  }
+}
+
+.about-item__icon svg {
+  aspect-ratio: 43/23;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-item__icon svg *[stroke] {
+  stroke: $darkbrown;
+}
+
+.about-item__icon ellipse {
+  fill: $yellow;
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .about-item:hover {
+    background-color: rgba($base, 0.1);
+  }
+
+  .about-item:hover .about-item__link {
+    padding-left: rem(20);
+  }
+
+  .about-item:hover .about-item__img {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .about-item:hover .about-item__icon {
+    transform: translateX(rem(11));
+  }
+}

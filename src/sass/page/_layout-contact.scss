@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.layout-contact {
+  padding: rem(120) 0;
+  @include mq("md") {
+    padding: rem(60) 0;
+  }
+}
