@@ -2085,7 +2085,7 @@ select::-ms-expand {
 .layout-about {
 	background-image: linear-gradient(to bottom, #f7f6f0 64.53%, #fff);
 	margin-top: 7.5rem;
-	padding-top: 7.5rem;
+	padding: 7.5rem 0;
 }
 
 .layout-activity {
@@ -2108,7 +2108,6 @@ select::-ms-expand {
 
 .layout-join {
 	background-color: #f8f8f8;
-	margin-top: 7.5rem;
 	padding: 7.25rem 0 7.5rem;
 }
 
@@ -2176,6 +2175,7 @@ select::-ms-expand {
 
 .layout-sub-reward {
 	margin-top: 12.375rem;
+	padding-bottom: 7.5rem;
 }
 
 @media (hover: hover) {
@@ -3018,7 +3018,7 @@ a[href^="tel:"] {
 
 .layout-about {
 	margin-top: 5rem;
-	padding-top: 3.75rem;
+	padding-top: 3.75rem 0;
 }
 
 .layout-activity {
@@ -3044,7 +3044,6 @@ a[href^="tel:"] {
 }
 
 .layout-join {
-	margin-top: 3.75rem;
 	padding: 3.75rem 0 10rem;
 }
 
@@ -3095,6 +3094,7 @@ a[href^="tel:"] {
 
 .layout-sub-reward {
 	margin-top: 2.5rem;
+	padding-bottom: 5rem;
 }
 
 }

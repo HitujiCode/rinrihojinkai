@@ -2,7 +2,9 @@
 
 .layout-sub-reward {
   margin-top: rem(198);
+  padding-bottom: rem(120);
   @include mq("md") {
     margin-top: rem(40);
+    padding-bottom: rem(80);
   }
 }

@@ -1,11 +1,9 @@
 @use "global" as *;
 
 .layout-join {
-  margin-top: rem(120);
   padding: rem(116) 0 rem(120);
   background-color: $bg-light;
   @include mq("md") {
-    margin-top: rem(60);
     padding: rem(60) 0 rem(160);
   }
 }
