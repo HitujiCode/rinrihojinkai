@@ -191,7 +191,7 @@ const browserSyncOption = {
   notify: false,
   // server: "../dist/", // ローカルサーバーのルートディレクトリ
   //WordPressの場合は↓を有効にする。その場合、↑(server)はコメントアウトする。
-  proxy: "http://fiorituralocal.local/", // ローカルサーバーのURL（WordPress）
+  proxy: "http://test.local/", // ローカルサーバーのURL（WordPress）
   open: true,
 };
 const browserSyncFunc = () => {
