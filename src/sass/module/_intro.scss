@@ -31,7 +31,7 @@
 
 .intro__container {
   display: flex;
-  gap: min((130 / 1232 * 100vw), rem(130));
+  gap: min((144 / 1232 * 100vw), rem(144));
   @include mq("md") {
     flex-direction: column;
     gap: 0;

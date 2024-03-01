@@ -1217,7 +1217,7 @@ select::-ms-expand {
 
 .intro__container {
 	display: flex;
-	gap: min(10.5519480519vw, 8.125rem);
+	gap: min(11.6883116883vw, 9rem);
 }
 
 .intro__img {
